@@ -1015,7 +1015,7 @@ class egs:
 
     stats.report(somes, 0.01)
 
-  def mean_vs_median():
+  def mean_vs_median(): 
     scoring_policies = [('exploit', lambda B, R,: B),
                         ('Random', lambda B, R: random.random())]
     

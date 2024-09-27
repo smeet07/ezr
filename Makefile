@@ -1,74 +1,28 @@
-# Default is show help; e.g.
-#
-#    make 
-#
-# prints the help text.
+# Define variables
+TMP_DIR=~/tmp
+MEASUREMENT_FILES=data/optimize/config/SS-T.csv data/optimize/config/Apache_AllMeasurements.csv data/optimize/config/HSMGP_num.csv data/optimize/config/SQL_AllMeasurements.csv data/optimize/config/SS-J.csv data/optimize/config/SS-K.csv data/optimize/config/SS-L.csv data/optimize/config/SS-M.csv data/optimize/config/SS-N.csv data/optimize/config/SS-O.csv data/optimize/config/SS-P.csv data/optimize/config/SS-Q.csv data/optimize/config/SS-R.csv data/optimize/config/SS-S.csv data/optimize/config/SS-U.csv data/optimize/config/SS-V.csv data/optimize/config/SS-W.csv data/optimize/config/SS-X.csv data/optimize/config/X264_AllMeasurements.csv data/optimize/config/rs-6d-c3_obj1.csv data/optimize/config/rs-6d-c3_obj2.csv data/optimize/config/sol-6d-c2-obj1.csv data/optimize/config/wc-6d-c1-obj1.csv
+SCRIPT=python3.13 -B extend3.py -t
 
-SHELL     := bash
-MAKEFLAGS += --warn-undefined-variables
-.SILENT:
+# Define the action to perform (branch in this case)
+Act ?= branch
 
-Top=$(shell git rev-parse --show-toplevel)
-Data ?= $(Top)/data/optimize
-Tmp  ?= $(HOME)/tmp
+# Define the target for running experiments (actb4)
+actb4:
+	mkdir -p $(TMP_DIR)/$(Act)
+	rm -f $(TMP_DIR)/$(Act)/*
+	@$(foreach file,$(MEASUREMENT_FILES), \
+		$(SCRIPT) $(file) | tee $(TMP_DIR)/$(Act)/$(notdir $(file)) & \
+	)
 
-help      :  ## show help
-	gawk -f $(Top)/etc/help.awk $(MAKEFILE_LIST) 
+# Target for generating a todo file
+todo:
+	@echo "Generating output files for each measurement..."
+	make Act=$(Act) actb4 > $(TMP_DIR)/$(Act).sh
 
-pull    : ## download
-	git pull
+# New target for storing the outputs separately
+outputs:
+	mkdir -p $(TMP_DIR)/$(Act)/outputs
+	@$(foreach file,$(MEASUREMENT_FILES), \
+		$(SCRIPT) $(file) | tee $(TMP_DIR)/$(Act)/outputs/$(notdir $(file)) & \
+	)
 
-push    : ## save
-	echo -en "\033[33mWhy this push? \033[0m"; read x; git commit -am "$$x"; git push; git status
-
-$(Top)/docs/%.pdf: %.py  ## make doco: .py ==> .pdf
-	mkdir -p ~/tmp
-	echo "pdf-ing $@ ... "
-	a2ps                 \
-		-Br                 \
-		--chars-per-line=90 \
-		--file-align=fill      \
-		--line-numbers=1        \
-		--pro=color               \
-		--left-title=""            \
-		--borders=no             \
-	    --left-footer="$<  "               \
-	    --right-footer="page %s. of %s#"               \
-		--columns 3                 \
-		-M letter                     \
-	  -o	 $@.ps $<
-	ps2pdf $@.ps $@; rm $@.ps
-	open $@
-
-docs/%.html : docs/%.md etc/b4.html docs/ezr.css Makefile ## make doco: md -> html
-	echo "$< ... "
-	pandoc -s  -f markdown --number-sections --toc  --toc-depth=5 \
-					-B etc/b4.html --mathjax \
-  		     --css ezr.css --highlight-style tango \
-	  			 -o $@  $<
-
-docs/%.html : %.py etc/py2html.awk etc/b4.html docs/ezr.css Makefile ## make doco: md -> html
-	echo "$< ... "
-	gawk -f etc/py2html.awk $< \
-	| pandoc -s  -f markdown --number-sections --toc --toc-depth=5 \
-					-B etc/b4.html --mathjax \
-  		     --css ezr.css --highlight-style tango \
-					 --metadata title="$<" \
-	  			 -o $@ 
-
-# another commaned
-Out=$(HOME)/tmp
-Act ?= _mqs
-acts: ## experiment: mqs
-	mkdir -p ~/tmp
-	$(MAKE)  actb4  > $(Tmp)/$(Act).sh
-	bash $(Tmp)/$(Act).sh
-
-actb4: ## experiment: mqs
-	mkdir -p $(Out)/$(Act)
-	$(foreach d, config hpo misc process,         \
-		$(foreach f, $(wildcard $(Data)/$d/*.csv),   \
-				echo "python3 $(PWD)/ezr.py  -t $f -e $(Act)  | tee $(Out)/$(Act)/$(shell basename $f) & "; ))
-
-fred:
-	echo $x
