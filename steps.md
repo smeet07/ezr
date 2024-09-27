@@ -20,15 +20,14 @@ Go to path to view the outputs:
 
     cd ~/tmp/branch/outputs
     ls
-![image](https://github.com/user-attachments/assets/78a8d351-60a4-42b5-a6eb-934c783185b1)
-
 
 for some reason the rq.sh did not work and showed "Column: line too long"
 I have copy pasted the output files from the tmp directory to result directory. To view the summary, I have translated the rq.sh into summary.py. to get the summary:
 
     cd result //considering you are in home directory
     python3 summary.py
-![image](https://github.com/user-attachments/assets/8265b53e-29c2-4953-a838-50e3627c255a)
+<img width="1066" alt="Screenshot 2024-09-26 at 10 42 00 PM" src="https://github.com/user-attachments/assets/679b29e4-9548-4de4-bc78-d8f6d5f13492">
+
 
 
 I have captured the output in output.txt file
