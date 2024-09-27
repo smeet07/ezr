@@ -1,0 +1,48 @@
+data/optimize/config/SS-J.csv
+asIs: 1.000
+div : 0.030
+rows: 3840
+xcols: 6
+ycols: 2
+
+rrp,4 : 0.00 secs
+rrp,13 : 0.17 secs
+exploit/b=False,20 : 0.04 secs
+exploit/b=True,20 : 0.18 secs
+exploit/b=False,30 : 0.08 secs
+exploit/b=True,30 : 0.23 secs
+exploit/b=False,40 : 0.11 secs
+exploit/b=True,40 : 0.24 secs
+rrp,4 : 0.00 secs
+rrp,12 : 0.16 secs
+explore/b=False,20 : 0.04 secs
+explore/b=True,20 : 0.15 secs
+explore/b=False,30 : 0.06 secs
+explore/b=True,30 : 0.18 secs
+explore/b=False,40 : 0.08 secs
+explore/b=True,40 : 0.17 secs
+#
+ 0,    explore/b=True,40,  0.07,  0.03,  *-                 |                   
+ 0,    exploit/b=True,40,  0.08,  0.03, -*--------          |                   
+ 0,    exploit/b=True,30,  0.08,  0.04, - *                 |                   
+#
+ 1,    exploit/b=True,20,  0.09,  0.03,  -*------           |                   
+ 1,   exploit/b=False,30,  0.10,  0.18,  -*      -----------|--------           
+ 1,   exploit/b=False,40,  0.10,  0.20, --*       ----------|-----------        
+ 1,    explore/b=True,30,  0.10,  0.03,   *-                |                   
+ 1,    explore/b=True,20,  0.10,  0.06, -  *                |                   
+#
+ 2,   exploit/b=False,20,  0.27,  0.22,   -      *  --------|-----              
+#
+ 3,   explore/b=False,30,  0.32,  0.28,   --        *  -----|-----              
+ 3,   explore/b=False,40,  0.33,  0.32,    ---      *      -|----------         
+#
+ 4,   explore/b=False,20,  0.41,  0.31,    --          *  --|-----------        
+#
+ 5,                rrp,4,  0.53,  0.39,           ------    *                   
+ 5,               rrp,13,  0.53,  0.45,   -------------     *            ---    
+#
+ 6,                rrp,4,  0.67,  0.33,            ----     |     * -----       
+ 6,               rrp,12,  0.73,  0.38,     -------------   |       *   -       
+#
+ 7,            asIs,3840,  0.85,  0.04,                     |            * ---- 

@@ -1,0 +1,43 @@
+data/optimize/config/SS-Q.csv
+asIs: 1.000
+div : 0.049
+rows: 2736
+xcols: 13
+ycols: 3
+
+rrp,4 : 0.00 secs
+rrp,13 : 0.15 secs
+exploit/b=False,20 : 0.06 secs
+exploit/b=True,20 : 0.17 secs
+exploit/b=False,30 : 0.11 secs
+exploit/b=True,30 : 0.21 secs
+exploit/b=False,40 : 0.15 secs
+exploit/b=True,40 : 0.25 secs
+rrp,4 : 0.00 secs
+rrp,14 : 0.14 secs
+explore/b=False,20 : 0.05 secs
+explore/b=True,20 : 0.14 secs
+explore/b=False,30 : 0.09 secs
+explore/b=True,30 : 0.17 secs
+explore/b=False,40 : 0.10 secs
+explore/b=True,40 : 0.17 secs
+#
+ 0,    exploit/b=True,40,  0.05,  0.00, *                   |                   
+ 0,    explore/b=True,40,  0.05,  0.00, *                   |                   
+ 0,    exploit/b=True,30,  0.06,  0.00, *                   |                   
+ 0,    explore/b=True,30,  0.06,  0.01, *-------            |                   
+ 0,    exploit/b=True,20,  0.06,  0.01, *                   |                   
+ 0,    explore/b=True,20,  0.06,  0.01, *----------         |                   
+ 0,   explore/b=False,40,  0.07,  0.12,  *    ---           |                   
+ 0,   exploit/b=False,20,  0.07,  0.17,  *      ----        |                   
+ 0,   explore/b=False,20,  0.08,  0.03, -*-----             |                   
+ 0,   explore/b=False,30,  0.08,  0.12,  *    ----          |                   
+#
+ 1,   exploit/b=False,40,  0.16,  0.15,      * --           |                   
+ 1,   exploit/b=False,30,  0.18,  0.17,       * ---         |                   
+#
+ 2,               rrp,14,  0.26,  0.13,    ----- *    ------|------             
+ 2,                rrp,4,  0.26,  0.24, --       *   -------|-                  
+ 2,               rrp,13,  0.28,  0.21,  ---------*        -|-------            
+ 2,            asIs,2736,  0.29,  0.11,  -------   * -------|-------            
+ 2,                rrp,4,  0.31,  0.17,  -----      * ------|------             

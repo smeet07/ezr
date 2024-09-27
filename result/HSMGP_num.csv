@@ -1,0 +1,42 @@
+data/optimize/config/HSMGP_num.csv
+asIs: 1.000
+div : 0.000
+rows: 3456
+xcols: 14
+ycols: 1
+
+rrp,4 : 0.00 secs
+rrp,13 : 0.18 secs
+exploit/b=False,20 : 0.06 secs
+exploit/b=True,20 : 0.20 secs
+exploit/b=False,30 : 0.11 secs
+exploit/b=True,30 : 0.25 secs
+exploit/b=False,40 : 0.15 secs
+exploit/b=True,40 : 0.27 secs
+rrp,4 : 0.00 secs
+rrp,12 : 0.15 secs
+explore/b=False,20 : 0.05 secs
+explore/b=True,20 : 0.17 secs
+explore/b=False,30 : 0.08 secs
+explore/b=True,30 : 0.17 secs
+explore/b=False,40 : 0.10 secs
+explore/b=True,40 : 0.12 secs
+#
+ 0,    explore/b=True,40,  0.00,  0.00, *                   |                   
+ 0,    exploit/b=True,40,  0.00,  0.00, *                   |                   
+ 0,   explore/b=False,40,  0.00,  0.00, *                   |                   
+ 0,    explore/b=True,30,  0.00,  0.00, *                   |                   
+ 0,    exploit/b=True,30,  0.00,  0.00, *                   |                   
+ 0,   exploit/b=False,40,  0.00,  0.01, *                   |                   
+ 0,   exploit/b=False,20,  0.00,  0.00, *                   |                   
+ 0,   exploit/b=False,30,  0.00,  0.01, *                   |                   
+ 0,    exploit/b=True,20,  0.00,  0.00, *                   |                   
+ 0,    explore/b=True,20,  0.00,  0.01, *                   |                   
+ 0,   explore/b=False,30,  0.00,  0.01, *                   |                   
+ 0,   explore/b=False,20,  0.00,  0.01, *                   |                   
+#
+ 1,               rrp,12,  0.02,  0.01, -*                  |                   
+ 1,                rrp,4,  0.03,  0.00, -*                  |                   
+ 1,                rrp,4,  0.03,  0.01, -*                  |                   
+ 1,            asIs,3456,  0.03,  0.03, -*---------------   |                   
+ 1,               rrp,13,  0.03,  0.02, -*-                 |                   

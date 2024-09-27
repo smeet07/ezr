@@ -1,0 +1,44 @@
+data/optimize/config/wc-6d-c1-obj1.csv
+asIs: 1.000
+div : 0.000
+rows: 2880
+xcols: 6
+ycols: 1
+
+rrp,4 : 0.00 secs
+rrp,12 : 0.12 secs
+exploit/b=False,20 : 0.05 secs
+exploit/b=True,20 : 0.15 secs
+exploit/b=False,30 : 0.07 secs
+exploit/b=True,30 : 0.19 secs
+exploit/b=False,40 : 0.10 secs
+exploit/b=True,40 : 0.20 secs
+rrp,4 : 0.00 secs
+rrp,12 : 0.12 secs
+explore/b=False,20 : 0.04 secs
+explore/b=True,20 : 0.14 secs
+explore/b=False,30 : 0.07 secs
+explore/b=True,30 : 0.15 secs
+explore/b=False,40 : 0.09 secs
+explore/b=True,40 : 0.17 secs
+#
+ 0,    exploit/b=True,40,  0.00,  0.00, *-                  |                   
+ 0,   exploit/b=False,40,  0.00,  0.00, *                   |                   
+ 0,   exploit/b=False,30,  0.00,  0.01, *--                 |                   
+ 0,    exploit/b=True,30,  0.00,  0.01, *                   |                   
+ 0,    explore/b=True,20,  0.00,  0.00, *----               |                   
+ 0,    explore/b=True,30,  0.00,  0.00, *---                |                   
+ 0,    explore/b=True,40,  0.00,  0.01, *                   |                   
+ 0,   exploit/b=False,20,  0.00,  0.01, *------             |                   
+ 0,    exploit/b=True,20,  0.00,  0.01, *------             |                   
+#
+ 1,   explore/b=False,40,  0.02,  0.02,  *---               |                   
+ 1,   explore/b=False,20,  0.02,  0.04,  * --               |                   
+ 1,   explore/b=False,30,  0.02,  0.04,  * --               |                   
+#
+ 2,            asIs,2880,  0.06,  0.05, ---*  ---           |                   
+ 2,                rrp,4,  0.07,  0.06, ---  *  --          |                   
+ 2,                rrp,4,  0.08,  0.08, ---  *  --------    |                   
+#
+ 3,               rrp,12,  0.14,  0.15, ---      *   -------|---                
+ 3,               rrp,12,  0.15,  0.17, -----     *     ----|---------------    

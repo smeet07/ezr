@@ -1,0 +1,41 @@
+data/optimize/config/rs-6d-c3_obj2.csv
+asIs: 1.000
+div : 0.000
+rows: 3840
+xcols: 6
+ycols: 1
+
+rrp,4 : 0.00 secs
+rrp,14 : 0.21 secs
+exploit/b=False,20 : 0.04 secs
+exploit/b=True,20 : 0.20 secs
+exploit/b=False,30 : 0.08 secs
+exploit/b=True,30 : 0.24 secs
+exploit/b=False,40 : 0.10 secs
+exploit/b=True,40 : 0.25 secs
+rrp,4 : 0.00 secs
+rrp,13 : 0.17 secs
+explore/b=False,20 : 0.04 secs
+explore/b=True,20 : 0.16 secs
+explore/b=False,30 : 0.06 secs
+explore/b=True,30 : 0.18 secs
+explore/b=False,40 : 0.07 secs
+explore/b=True,40 : 0.17 secs
+#
+ 0,    exploit/b=True,40,  0.00,  0.00, *                   |                   
+ 0,   exploit/b=False,30,  0.00,  0.00, *                   |                   
+ 0,    exploit/b=True,30,  0.00,  0.00, *                   |                   
+ 0,   exploit/b=False,40,  0.00,  0.00, *                   |                   
+ 0,    explore/b=True,40,  0.00,  0.00, *                   |                   
+ 0,    explore/b=True,30,  0.00,  0.00, *                   |                   
+ 0,   exploit/b=False,20,  0.00,  0.00, *                   |                   
+ 0,    exploit/b=True,20,  0.00,  0.00, *                   |                   
+ 0,    explore/b=True,20,  0.00,  0.00, *                   |                   
+ 0,   explore/b=False,40,  0.00,  0.00, *                   |                   
+ 0,   explore/b=False,20,  0.00,  0.00, *                   |                   
+ 0,            asIs,3840,  0.00,  0.00, *                   |                   
+ 0,   explore/b=False,30,  0.00,  0.00, *                   |                   
+ 0,                rrp,4,  0.00,  0.00, *                   |                   
+ 0,                rrp,4,  0.00,  0.00, *-                  |                   
+ 0,               rrp,14,  0.00,  0.00, *-                  |                   
+ 0,               rrp,13,  0.00,  0.00, *-----------        |                   

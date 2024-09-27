@@ -1,0 +1,45 @@
+data/optimize/config/Apache_AllMeasurements.csv
+asIs: 1.000
+div : 0.000
+rows: 192
+xcols: 9
+ycols: 1
+
+rrp,4 : 0.00 secs
+rrp,5 : 0.01 secs
+exploit/b=False,20 : 0.03 secs
+exploit/b=True,20 : 0.03 secs
+exploit/b=False,30 : 0.06 secs
+exploit/b=True,30 : 0.05 secs
+exploit/b=False,40 : 0.08 secs
+exploit/b=True,40 : 0.08 secs
+rrp,4 : 0.00 secs
+rrp,5 : 0.00 secs
+explore/b=False,20 : 0.03 secs
+explore/b=True,20 : 0.03 secs
+explore/b=False,30 : 0.06 secs
+explore/b=True,30 : 0.06 secs
+explore/b=False,40 : 0.08 secs
+explore/b=True,40 : 0.08 secs
+#
+ 0,   exploit/b=False,20,  0.00,  0.02, *                   |                   
+ 0,    exploit/b=True,20,  0.00,  0.02, *                   |                   
+ 0,   exploit/b=False,30,  0.00,  0.00, *                   |                   
+ 0,    exploit/b=True,30,  0.00,  0.00, *                   |                   
+ 0,   exploit/b=False,40,  0.00,  0.00, *                   |                   
+ 0,    exploit/b=True,40,  0.00,  0.00, *                   |                   
+ 0,   explore/b=False,20,  0.00,  0.02, *                   |                   
+ 0,    explore/b=True,20,  0.00,  0.02, *                   |                   
+ 0,   explore/b=False,30,  0.00,  0.00, *                   |                   
+ 0,    explore/b=True,30,  0.00,  0.00, *                   |                   
+ 0,   explore/b=False,40,  0.00,  0.00, *                   |                   
+ 0,    explore/b=True,40,  0.00,  0.00, *                   |                   
+#
+ 1,                rrp,4,  0.07,  0.03, --*---              |                   
+#
+ 2,                rrp,4,  0.10,  0.08,  -  *---            |                   
+#
+ 3,                rrp,5,  0.12,  0.08,   --*  -            |                   
+ 3,                rrp,5,  0.13,  0.10,   -  * -            |                   
+#
+ 4,             asIs,192,  0.22,  0.38,   ---   *           |--------           

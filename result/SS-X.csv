@@ -1,0 +1,45 @@
+data/optimize/config/SS-X.csv
+asIs: 1.000
+div : 0.003
+rows: 86058
+xcols: 11
+ycols: 2
+
+rrp,4 : 0.06 secs
+rrp,30 : 1.80 secs
+exploit/b=False,20 : 0.04 secs
+exploit/b=True,32 : 0.81 secs
+exploit/b=False,30 : 0.05 secs
+exploit/b=True,32 : 0.78 secs
+exploit/b=False,40 : 0.07 secs
+exploit/b=True,40 : 0.80 secs
+rrp,4 : 0.01 secs
+rrp,29 : 0.78 secs
+explore/b=False,20 : 0.04 secs
+explore/b=True,31 : 0.77 secs
+explore/b=False,30 : 0.06 secs
+explore/b=True,32 : 0.78 secs
+explore/b=False,40 : 0.07 secs
+explore/b=True,40 : 0.74 secs
+#
+ 0,    exploit/b=True,40,  0.24,  0.03,             *------ |                   
+ 0,    explore/b=True,40,  0.24,  0.03, ----------- *-------|-----              
+ 0,   exploit/b=False,20,  0.24,  0.06,            -*  ---- |                   
+ 0,   exploit/b=False,40,  0.24,  0.02,            -*       |                   
+ 0,   explore/b=False,40,  0.25,  0.02,             *-------|                   
+ 0,   exploit/b=False,30,  0.25,  0.05,   ---------  *------|                   
+ 0,   explore/b=False,30,  0.26,  0.03,              *------|                   
+#
+ 1,   explore/b=False,20,  0.31,  0.11,                 *  -|                   
+#
+ 2,    exploit/b=True,32,  0.43,  0.22, -------------       | *  --             
+ 2,    explore/b=True,32,  0.44,  0.21,    -----------      | *  -------        
+#
+ 3,                rrp,4,  0.47,  0.03,                     | --*-----          
+ 3,    explore/b=True,31,  0.47,  0.05,                   --|---* --            
+ 3,               rrp,29,  0.47,  0.06,                 ----|-  *-----          
+ 3,           asIs,86058,  0.47,  0.06,                -----|-  * --            
+ 3,                rrp,4,  0.47,  0.05,                     |-- * -----         
+ 3,    exploit/b=True,32,  0.48,  0.04,                     |--- *---           
+#
+ 4,               rrp,30,  0.50,  0.10,                  ---|--   *  ----       
