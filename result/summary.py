@@ -1,129 +1,119 @@
 import os
-import pandas as pd
+import re
 from collections import defaultdict
 
 def process_csv_files():
     max_rank = 0
-    baseline = None
     records = 0
+    baseline = 1.0
+    count = defaultdict(lambda: defaultdict(int))
     evals = defaultdict(lambda: defaultdict(list))
     delta = defaultdict(lambda: defaultdict(list))
-    count = defaultdict(lambda: defaultdict(int))
-    
-    # Process all CSV-like files in the current directory
+    best_rank = defaultdict(lambda: float('inf'))
+
     for filename in sorted(os.listdir('.')):
-        if filename.endswith(".csv"):
+        if filename.endswith('.csv'):
             with open(filename, 'r') as f:
                 lines = f.readlines()
-            
-            # Prepare a list for cleaned data
-            data = []
-            seen = set()
-            
-            for line in lines:
-                line = line.strip()
-
-                # Skip comment or metadata lines (lines starting with '#')
-                if line.startswith('#') or len(line) == 0:
-                    continue
-
-                # Split the line by commas to get fields
-                parts = line.split(',')
+                data = []
+                for line in lines:
+                    line = re.sub(r'[ \t]', '', line)
+                    parts = line.strip().split(',')
+                    if len(parts) >= 5:
+                        data.append(parts)
                 
-                if len(parts) >= 4:
-                    # Clean up and convert values as necessary
-                    rank, rx, eval_val, baseline_val = parts[0].strip(), parts[1].strip(), parts[2].strip(), parts[3].strip()
-                    
-                    if rx == "baseline":
-                        baseline = float(baseline_val)
-                    else:
-                        rank = int(rank)
-                        eval_val = float(eval_val)
-                        baseline_val = float(baseline_val)
-                        
-                        # Calculate delta if baseline is available
-                        if baseline is not None:
-                            delta_val = (baseline - baseline_val) / (baseline + 1e-30)
-                            delta[rx][rank].append(delta_val)
-                        
-                        evals[rx][rank].append(eval_val)
-                        count[rx][rank] += 1
+                data.sort(key=lambda x: (int(x[0]), float(x[2])))
+                seen = set()
+                for parts in data:
+                    if parts[1] not in seen:
+                        rank = int(parts[0])
+                        rx = parts[1]
+                        eval_val = float(parts[2])
+                        baseline_val = float(parts[3])
+
                         max_rank = max(max_rank, rank)
+                        count[rx][rank] += 1
+                        evals[rx][rank].append(eval_val)
+                        best_rank[rx] = min(best_rank[rx], rank)
+
+                        if rx == "asIs":
+                            baseline = eval_val
+                        else:
+                            delta_val = (baseline - eval_val) / (baseline + 1e-30)
+                            delta[rx][rank].append(delta_val)
+
+                        seen.add(rx)
                         records += 1
 
-    return evals, delta, count, max_rank, records
+    return max_rank, records, count, evals, delta, best_rank
 
-def main():
-    evals, delta, count, max_rank, records = process_csv_files()
+def mu(a):
+    if len(a) < 1:
+        return 0
+    return sum(a) / len(a)
 
-    def mu(arr):
-        if len(arr) == 0:
-            return None
-        return sum(arr) / len(arr)
+def sd(a):
+    if len(a) < 2:
+        return 0
+    a = sorted(a)
+    n = max(1, int(len(a) / 10))
+    return (a[-n] - a[n-1]) / 2.56
 
-    def sd(arr):
-        if len(arr) < 2:
-            return None
-        return (max(arr) - min(arr)) / 2.56
+def per(x, records):
+    x = int(0.5 + 100 * x / records)
+    return "" if x < 1 else str(x)
 
-    def print_ranks():
-        print("RANK", end="")
+def print_ranks(max_rank, records, count, best_rank):
+    print("RANK", end="")
+    for rank in range(max_rank + 1):
+        print(f" {rank:>3}", end="")
+    print()
+
+    sorted_rx = sorted(count.keys(), key=lambda x: best_rank[x])
+    for rx in sorted_rx:
+        print(f"{rx:<10}", end="")
         for rank in range(max_rank + 1):
-            print(f", {rank:3}", end="")
-        print("")
+            print(f" {per(count[rx][rank], records):>3}", end="")
+        print()
 
-        for rx in count:
-            print(f"{rx:10}", end="")
-            for rank in range(max_rank + 1):
-                if rank in count[rx]:
-                    print(f", {count[rx][rank]:3}", end="")
-                else:
-                    print(",   ", end="")
-            print("")
+def print_evaluations(max_rank, evals, best_rank):
+    print("\n#\n#EVALS\nRANK", end="")
+    for rank in range(max_rank + 1):
+        print(f" {rank:>9}", end="")
+    print()
 
-    def print_evaluations():
-        print("\n#\n#EVALS\nRANK", end="")
+    sorted_rx = sorted(evals.keys(), key=lambda x: best_rank[x])
+    for rx in sorted_rx:
+        print(f"{rx:<10}", end="")
         for rank in range(max_rank + 1):
-            print(f", {rank:9}", end="")
-        print("")
+            if rank in evals[rx]:
+                mean_val = mu(evals[rx][rank])
+                sd_val = sd(evals[rx][rank])
+                print(f" {int(0.5 + mean_val):3d} ({int(0.5 + sd_val):3d})", end="")
+            else:
+                print(" " * 9, end="")
+        print()
 
-        for rx in evals:
-            print(f"{rx:10}", end="")
-            for rank in range(max_rank + 1):
-                if rank in evals[rx]:
-                    mean_val = mu(evals[rx][rank])
-                    sd_val = sd(evals[rx][rank])
-                    # Check if mean_val or sd_val is None, and print '-' if so
-                    if mean_val is not None and sd_val is not None:
-                        print(f", {mean_val:3.2f} ({sd_val:3.2f})", end="")
-                    else:
-                        print(",       -      ", end="")
-                else:
-                    print(",          ", end="")
-            print("")
+def print_improvement(max_rank, delta, best_rank):
+    print("\n#\n#DELTAS\nRANK", end="")
+    for rank in range(max_rank + 1):
+        print(f" {rank:>9}", end="")
+    print()
 
-
-    def print_improvement():
-        print("\n#\n#DELTAS\nRANK", end="")
+    sorted_rx = sorted(delta.keys(), key=lambda x: best_rank[x])
+    for rx in sorted_rx:
+        print(f"{rx:<10}", end="")
         for rank in range(max_rank + 1):
-            print(f", {rank:9}", end="")
-        print("")
-
-        for rx in delta:
-            print(f"{rx:10}", end="")
-            for rank in range(max_rank + 1):
-                if rank in delta[rx]:
-                    mean_delta = mu(delta[rx][rank])
-                    sd_delta = sd(delta[rx][rank])
-                    print(f", {mean_delta * 100:.1f}% ({sd_delta * 100:.1f}%)", end="")
-                else:
-                    print(",          ", end="")
-            print("")
-
-    # Print results
-    print_ranks()
-    print_evaluations()
-    print_improvement()
+            if rank in delta[rx]:
+                mean_delta = mu(delta[rx][rank])
+                sd_delta = sd(delta[rx][rank])
+                print(f" {int(0.5 + 100 * mean_delta):3d} ({int(0.5 + 100 * sd_delta):3d})", end="")
+            else:
+                print(" " * 9, end="")
+        print()
 
 if __name__ == "__main__":
-    main()
+    max_rank, records, count, evals, delta, best_rank = process_csv_files()
+    print_ranks(max_rank, records, count, best_rank)
+    print_evaluations(max_rank, evals, best_rank)
+    print_improvement(max_rank, delta, best_rank)
