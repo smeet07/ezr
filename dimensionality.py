@@ -5,6 +5,8 @@ import stats
 import sys, random
 import ezr
 from ezr import the, DATA, NUM, SYM, COL, csv, dot, adds
+from prince import FAMD, MCA
+import pandas as pd
 
 
 class PCAProcessor:
@@ -89,16 +91,65 @@ class PCAProcessor:
             yield new_row
             
     
-        
-
-
     
+class FAMDProcessor:
+    def __init__(self, data: DATA, n_components: int):
+        self.data = data
+        self.n_components = n_components
+        self.famd = FAMD(n_components=n_components)
+        self.num_cols = [col.txt for col in self.data.cols.x if isinstance(col, NUM)]
+        self.cat_cols = [col.txt for col in self.data.cols.x if isinstance(col, SYM)]
+        if len(self.num_cols) == 0:
+            self.famd = MCA(n_components=n_components)
+        elif len(self.cat_cols) == 0:
+            self.famd = PCA(n_components=n_components)
+        self.new_cols = []
+
+    def fit_transform(self) -> DATA:
+        # Extract and preprocess numeric and categorical data
+        combined_data = self._extract_data()
+        # Apply FAMD
+        transformed_data = self.famd.fit_transform(combined_data)
+        
+        return DATA().adds(self._create_new_data(transformed_data))
+
+    def _extract_data(self) -> np.ndarray:
+        # Extract data and return as a DataFrame
+        data_dict = {}
+        for col in self.data.cols.x:
+            col_data = [row[col.at] for row in self.data.rows]
+            if isinstance(col, NUM):
+                data_dict[col.txt] = col_data
+            else:
+                data_dict[col.txt] = [str(x) for x in col_data]
+        return pd.DataFrame(data_dict)
+    
+    def _combine_data(self, numeric_data: np.ndarray, cat_data: np.ndarray) -> np.ndarray:
+        if numeric_data.size == 0:
+            return cat_data
+        if cat_data.size == 0:
+            return numeric_data
+        return np.hstack((numeric_data, cat_data))
+
+
+    def _create_new_data(self, transformed_data):
+        self.new_cols = ['Famd'+str(i) for i in range(self.n_components)]
+        yield self.new_cols
+        if not isinstance(transformed_data, pd.DataFrame):
+            transformed_data = pd.DataFrame(transformed_data)
+
+        for i, row in transformed_data.iterrows():
+            y_data = [self.data.rows[i][col.at] for col in self.data.cols.y]
+            new_row = list(row) + list(y_data)
+            yield new_row
+            
 
 train = "/workspaces/ezr/data/optimize/config/SS-W.csv"
 data = DATA().adds(csv(train))
 print(len(data.cols.x))
 pca_processor = PCAProcessor(data, n_components=1, cat_method='one_hot')
-new_data = pca_processor.fit_transform()
+famd_processor = FAMDProcessor(data, n_components=2)
+new_data = famd_processor.fit_transform()
 print("X___________")
 print(new_data.cols.x)
 print("Y___________")
