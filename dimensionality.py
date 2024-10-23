@@ -133,7 +133,7 @@ class FAMDProcessor:
 
 
     def _create_new_data(self, transformed_data):
-        self.new_cols = ['Famd'+str(i) for i in range(self.n_components)]
+        self.new_cols = ['Famd'+str(i) for i in range(self.n_components)] + [col.txt for col in self.data.cols.y]
         yield self.new_cols
         if not isinstance(transformed_data, pd.DataFrame):
             transformed_data = pd.DataFrame(transformed_data)
