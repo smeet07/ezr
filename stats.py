@@ -112,6 +112,18 @@ class SOME:
       samples= bootstraps or the.stats.bootstraps or 512
       n      = sum(pull(yhat).delta(pull(zhat)) > delta0  for _ in range(samples)) 
       return n / samples >= (confidence or the.stats.confidence or 0.05)
+      
+def medianSd(data):
+    sorted_data = sorted(data)
+    n = len(sorted_data)
+    median = sorted_data[n//2] if n % 2 else (sorted_data[n//2 - 1] + sorted_data[n//2]) / 2
+    
+    # Calculate standard deviation
+    mean = sum(data) / n
+    variance = sum((x - mean) ** 2 for x in data) / (n - 1)
+    sd = variance ** 0.5
+    
+    return median, sd
 
 # ---------------------------------------------------------------------------------------
 def sk(somes,epsilon=0.01):

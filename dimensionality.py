@@ -81,13 +81,11 @@ class PCAProcessor:
             self.new_cols += self.cat_cols
         else:
             self.new_cols = ['Pca'+str(i) for i in range(self.n_components)]
-        
-
         self.new_cols += y_cols
         yield self.new_cols
-        for i,row in enumerate(combined_data):
+        for i, row in enumerate(combined_data):
             y_data = [self.data.rows[i][col.at] for col in self.data.cols.y]
-            new_row = list(row) + list(y_data)
+            new_row = list(row) + y_data
             yield new_row
             
     
@@ -137,22 +135,21 @@ class FAMDProcessor:
         yield self.new_cols
         if not isinstance(transformed_data, pd.DataFrame):
             transformed_data = pd.DataFrame(transformed_data)
-
         for i, row in transformed_data.iterrows():
             y_data = [self.data.rows[i][col.at] for col in self.data.cols.y]
-            new_row = list(row) + list(y_data)
+            new_row = list(row) + y_data
             yield new_row
             
 
-train = "/workspaces/ezr/data/optimize/config/SS-W.csv"
-data = DATA().adds(csv(train))
-print(len(data.cols.x))
-pca_processor = PCAProcessor(data, n_components=1, cat_method='one_hot')
-famd_processor = FAMDProcessor(data, n_components=2)
-new_data = famd_processor.fit_transform()
-print("X___________")
-print(new_data.cols.x)
-print("Y___________")
-print(new_data.cols.y)
-print(len(new_data.cols.x))
-print(len(new_data.cols.y))
+# train = "/workspaces/ezr/data/optimize/config/SS-W.csv"
+# data = DATA().adds(csv(train))
+# print(len(data.cols.x))
+# pca_processor = PCAProcessor(data, n_components=1, cat_method='one_hot')
+# famd_processor = FAMDProcessor(data, n_components=2)
+# new_data = famd_processor.fit_transform()
+# print("X___________")
+# print(new_data.cols.x)
+# print("Y___________")
+# print(new_data.cols.y)
+# print(len(new_data.cols.x))
+# print(len(new_data.cols.y))
