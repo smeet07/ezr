@@ -117,7 +117,7 @@ class FAMDProcessor:
         for col in self.data.cols.x:
             col_data = [row[col.at] for row in self.data.rows]
             if isinstance(col, NUM):
-                data_dict[col.txt] = col_data
+                data_dict[col.txt] = [float(x) for x in col_data]
             else:
                 data_dict[col.txt] = [str(x) for x in col_data]
         return pd.DataFrame(data_dict)
