@@ -4,74 +4,108 @@ import os
 import time
 import numpy as np
 from ezr import the, DATA, csv
-from dimensionality import PCAProcessor, FAMDProcessor
+from modules.dimensionality import PCAProcessor, FAMDProcessor, MCAProcessor
+from modules.discretization import DiscretizationProcessor, DiscretizeTypes
+from modules.one_hot import OneHotPreprocessor
+from modules.feature_elimination import FeatureEliminationProcessor, CosineSimilarity, MutualInformationSimilarity, VarianceRelevance, EntropyRelevance
 import stats
 
-def run_experiment(d, method_name, reduction_func=None):
+def run_experiment(d,pipeline:'Pipeline'):
     results = []
     for the.Last in [20, 30, 40]:
         start = time.time()
-        if reduction_func:
-            reduced_data = reduction_func(d)
-            result = [reduced_data.chebyshev(reduced_data.shuffle().activeLearning()[0]) for _ in range(20)]
-        else:
-            result = [d.chebyshev(d.shuffle().activeLearning()[0]) for _ in range(20)]
+        reduced_data = pipeline.transform(d)
+        result = [reduced_data.chebyshev(reduced_data.shuffle().activeLearning()[0]) for _ in range(20)]
         duration = (time.time() - start) / 20
-        print(f"{method_name} (Last={the.Last}): {duration:.2f} secs")
-        results.append((the.Last, result, duration))
+        print(f"{pipeline.name} (Last={the.Last}): {duration:.2f} secs")
+        results.append((the.Last, result, duration, len(d.cols.x), len(reduced_data.cols.x)))
     return results
 
-def mca_symbolic(d):
-    famd = FAMDProcessor(d, n_components=3)
-    return famd.fit_transform()
+class Pipeline:
+    def __init__(self, name, preprocessors):
+        self.preprocessors = preprocessors
+        self.name = name
+        
+    def transform(self, d):
+        for preprocessor in self.preprocessors:
+            d = preprocessor.transform(d)
+        return d
 
-def famd_both(d):
-    famd = FAMDProcessor(d, n_components=3)
-    return famd.fit_transform()
+original = Pipeline("Original", [])
 
-def pca_numeric(d):
-    pca = PCAProcessor(d, n_components=2, cat_method='none')
-    return pca.fit_transform()
+sym_dim_red = Pipeline("Sym Dim Red", [
+    DiscretizationProcessor(DiscretizeTypes.KMeans, 10),
+    MCAProcessor(5)
+])
 
-def main(train_file):
-    print(train_file)
-    if not os.path.isfile(train_file):
-        print(f"Error: File {train_file} not found.")
-        return
+num_dim_red = Pipeline("Num Dim Red", [
+    OneHotPreprocessor(),
+    PCAProcessor(n_components=10)
+])
 
-    try:
-        the.train = train_file
-        d = DATA().adds(csv(the.train))
+sym_feature_elim = Pipeline("Sym Feature Elim", [
+    DiscretizationProcessor(DiscretizeTypes.KMeans, 10),
+    FeatureEliminationProcessor(EntropyRelevance(0), MutualInformationSimilarity(0.7), 10)
+])
 
-        print(f"rows: {len(d.rows)}")
-        print(f"xcols: {len(d.cols.x)}")
-        print(f"ycols: {len(d.cols.y)}\n")
+num_feature_elim = Pipeline("Num Feature Elim", [
+    OneHotPreprocessor(),
+    FeatureEliminationProcessor(VarianceRelevance(0), CosineSimilarity(0.7), 10)
+])
 
-        reduction_methods = [
-            ("Original", None),
-            ("MCA Symbolic", mca_symbolic),
-            ("FAMD Both", famd_both),
-            ("PCA Numeric", pca_numeric)
-        ]
+famd = Pipeline("FAMD", [ 
+    FAMDProcessor(10)
+])
 
-        all_results = []
-        for method_name, reduction_func in reduction_methods:
-            results = run_experiment(d, method_name, reduction_func)
-            all_results.extend([(method_name, *result) for result in results])
+import os
+import pandas as pd
 
-        # Print results
-        for method_name, last, result, duration in all_results:
-            print(f"{method_name}, Last={last}: mean={np.mean(result):.3f}, std={np.std(result):.3f}, time={duration:.2f} secs")
+def main():
+    datasets_path = "data/our_datasets"
+    df = pd.DataFrame(columns=["dataset", "method", "last", "mean", "std", "time", "xcols", "xcols_reduced", "rank"])
+    index = 0
+    for file in os.listdir(datasets_path):
+        if not file.endswith(".csv"):
+            continue
+        print(f"Running {file}...")
+        train_file = os.path.join(datasets_path, file)
+            
+        pipelines = [sym_feature_elim, original, sym_dim_red, num_dim_red, num_feature_elim]
 
-        # Generate SOME objects for stats report
-        somes = [stats.SOME(result, f"{method_name},{last}") for method_name, last, result, _ in all_results]
-        stats.report(somes, 0.01)
+        try:
+            the.train = train_file
+            d = DATA().adds(csv(the.train))
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        import traceback
-        traceback.print_exc()
+            print(f"rows: {len(d.rows)}")
+            print(f"xcols: {len(d.cols.x)}")
+            print(f"ycols: {len(d.cols.y)}\n")
+
+            all_results = []
+            for pipeline in pipelines:
+                results = run_experiment(d, pipeline)
+                all_results.extend([(pipeline.name, *result) for result in results])
+
+            # Print results
+            for method_name, last, result, duration, xcols, xcols_reduced in all_results:
+                print(f"{method_name}, Last={last}: mean={np.mean(result):.3f}, std={np.std(result):.3f}, time={duration:.2f} secs, xcols={xcols}, xcols_reduced={xcols_reduced}")
+                df.loc[index] = [file, method_name, last, np.mean(result), np.std(result), duration, xcols, xcols_reduced, -1]
+                index += 1
+
+            # Generate SOME objects for stats report
+            somes = [stats.SOME(result, f"{method_name},{last}") for method_name, last, result, _, _, _ in all_results]
+            ranks = stats.report(somes, 0.01)
+            for rank in ranks:
+                method, last = rank.txt.split(",")
+                filterr = (df["method"] == method) & (df["last"] == int(last)) & (df['dataset'] == file)
+                df.loc[filterr, "rank"] = int(rank.rank)
+            df.to_csv("results.csv", index=False)
+            
+
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            import traceback
+            traceback.print_exc()
 
 if __name__ == "__main__":
     random.seed(the.seed)
-    [main(arg) for arg in sys.argv if arg.endswith(".csv")]
+    main()

@@ -4,7 +4,7 @@ import os
 import time
 import numpy as np
 from ezr import the, DATA, csv, dot
-from dimensionality import PCAProcessor, FAMDProcessor
+from modules.dimensionality import PCAProcessor, FAMDProcessor
 import stats
 
 def show(lst):

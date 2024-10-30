@@ -173,11 +173,13 @@ def bars(somes, width=40,epsilon=0.01,fmt="%5.2f"):
 def report(somes,epsilon=0.01,fmt="%5.2f"):
   all = SOME(somes)
   last = None
+  ranks = sk(somes,epsilon)
   #print(SOME(inits=[x for some in somes for x in some._has]).div()*the.stats.cohen)
   for some in sk(somes,epsilon):
     if some.rank != last: print("#")
     last=some.rank
     print(all.bar(some,width=40,word="%20s", fmt=fmt))
+  return ranks
 
 # ---------------------------------------------------------------------------------------
 def some1(n=5):

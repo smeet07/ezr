@@ -32,7 +32,7 @@ the fewest number of goal values?
     -p --p      int    distance formula exponent    = 2   
     -s --seed   int    random number seed           = 1234567891   
     -S --Stop   int    min size of tree leaves      = 30   
-    -t --train  str    training csv file. row1 has names = data/misc/auto93.csv
+    -t --train  str    training csv file. row1 has names = data/optimize/misc/auto93.csv
 
 ### Data File Format
 
@@ -1048,6 +1048,16 @@ class egs:
           somes +=   [stats.SOME(result,    f"{what}/branch={divide} ,{the.Last}")]
 
     stats.report(somes, 0.01)
+    
+  from modules.one_hot import OneHotPreprocessor
+  
+  def my_tests():
+    d = DATA().adds(csv(the.train))
+    preprocessor = OneHotPreprocessor()
+    new_data = preprocessor.transform(d)
+    print([col.txt for col in new_data.cols.x])
+    
+    
 
 # #--------- --------- --------- --------- --------- --------- --------- --------- --------
 # # ## Gaussian Process UCB (Sklearn)
