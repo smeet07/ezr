@@ -3,7 +3,7 @@ import random
 import os
 import time
 import numpy as np
-from ezr import the, DATA, csv as ezr_csv
+from ezr import the, DATA, NUM, SYM, csv as ezr_csv
 from dimensionality import PCAProcessor, FAMDProcessor
 import stats
 import csv
@@ -47,7 +47,8 @@ def main(train_file):
     try:
         the.train = train_file
         d = DATA().adds(ezr_csv(the.train))
-
+        num_cols = [col.txt for col in d.cols.x if isinstance(col, NUM)]
+        cat_cols = [col.txt for col in d.cols.x if isinstance(col, SYM)]
         print(f"rows: {len(d.rows)}")
         print(f"xcols: {len(d.cols.x)}")
         print(f"ycols: {len(d.cols.y)}\n")
@@ -64,8 +65,15 @@ def main(train_file):
         all_results = []
         for method_name, reduction_func in reduction_methods:
             for dim_prop in dim_proportions:
+                if len(num_cols)==0 and (method_name=="PCA Numeric" or method_name=="FAMD Both"):
+                    break
+                if len(cat_cols)==0 and (method_name=="MCA Symbolic" or method_name=="FAMD Both"):
+                    break
                 results = run_experiment(d, method_name, reduction_func, dim_prop)
                 all_results.extend([(method_name, dim_prop, *result) for result in results])
+                if method_name=="Original":
+                    break
+
 
         # Print results
         for method_name, dim_prop, last, result, duration in all_results:
