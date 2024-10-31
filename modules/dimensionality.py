@@ -1,24 +1,9 @@
 from sklearn.decomposition import PCA
-from sklearn.preprocessing import OneHotEncoder, LabelEncoder
-import numpy as np
-import stats
-import sys, random
-import ezr
-from ezr import the, DATA, NUM, SYM, COL, csv, dot, adds
 from prince import FAMD, MCA
 import pandas as pd
-from modules.one_hot import OneHotPreprocessor
-from modules.discretization import DiscretizationProcessor, DiscretizeTypes
-
-from sklearn.decomposition import PCA
+import numpy as np
 from ezr import *
 from copy import deepcopy
-import numpy as np
-
-from prince import MCA
-from ezr import *
-import numpy as np
-import pandas as pd
 
 class PCAProcessor:
     def __init__(self, n_components=None):
@@ -31,8 +16,8 @@ class PCAProcessor:
         sym_cols = [col for col in data.cols.x if isinstance(col, SYM)]
         y_cols = data.cols.y
         
-        assert len(sym_cols) == 0, "All columns must be numeric for PCA"
-        assert len(num_cols) > 0, "No numeric columns to apply PCA"
+        assert len(sym_cols) != 0, "All columns must be numeric for PCA"
+        assert len(num_cols) == 0, "No numeric columns to apply PCA"
             
         # Prepare the data matrix X
         X = np.array([[r[col.at] for col in num_cols] for r in data.rows])
@@ -40,31 +25,16 @@ class PCAProcessor:
         X_pca = self.pca.fit_transform(X)
         
         # Create new columns for the PCA components
-        new_cols = []
+        new_cols = [f"PCA{i}" for i in range(X_pca.shape[1])] + [col.txt for col in y_cols]
         new_cols_values = []
-        index = 0
-        for i in range(X_pca.shape[1]):
-            new_cols.append(NUM(at=index, txt=f'PC_{i+1}'))
-            new_cols_values.append([float(val) for val in X_pca[:, i]])
-            index += 1
+        for i,row in enumerate(X_pca):
+            row_data = [float(val) for val in row]
+            y_data = [data.rows[i][col.at] for col in data.cols.y]
+            row_data += y_data
+            new_cols_values.append(row_data)
         
-        # Include the y columns (if any)
-        for col in y_cols:
-            new_cols.append(col)
-            new_cols_values.append([r[col.at] for r in data.rows])
-            col.at = index  # Update the index
-            index += 1
-        
-        # Build new rows
-        rows = []
-        for i in range(len(data.rows)):
-            row = []
-            for col_values in new_cols_values:
-                row.append(col_values[i])
-            rows.append(row)
-        
-        # Create new DATA object
-        new_data = DATA().adds([[col.txt for col in new_cols]] + rows)
+        new_data = new_cols + new_cols_values
+        new_data = DATA().adds(new_data)
         # Confirm that the x columns are all NUM
         assert all([isinstance(col, NUM) for col in new_data.cols.x])
         return new_data
@@ -80,8 +50,8 @@ class MCAProcessor:
         num_cols = [col for col in data.cols.x if isinstance(col, NUM)]
         y_cols = data.cols.y
         
-        assert len(sym_cols) > 0, "No categorical columns to apply MCA"
-        assert len(num_cols) == 0, "All columns must be categorical (SYM) for MCA"
+        assert len(sym_cols) == 0, "No categorical columns to apply MCA"
+        assert len(num_cols) != 0, "All columns must be categorical (SYM) for MCA"
             
         # Prepare the data matrix X
         X = [[r[col.at] for col in sym_cols] for r in data.rows]
@@ -91,31 +61,17 @@ class MCAProcessor:
         X_mca = self.mca.fit_transform(X_df)
         
         # Create new columns for the MCA components
-        new_cols = []
+        new_cols = [f"MCA{i}" for i in range(X_mca.shape[1])] + [col.txt for col in y_cols]
         new_cols_values = []
-        index = 0
-        for i in range(X_mca.shape[1]):
-            new_cols.append(NUM(at=index, txt=f'MCA_{i+1}'))
-            new_cols_values.append([float(val) for val in X_mca.iloc[:, i].values])
-            index += 1
+        for i,row in enumerate(X_mca):
+            row_data = [float(val) for val in row]
+            y_data = [data.rows[i][col.at] for col in data.cols.y]
+            row_data += y_data
+            new_cols_values.append(row_data)
         
-        # Include the y columns (if any)
-        for col in y_cols:
-            new_cols.append(col)
-            new_cols_values.append([r[col.at] for r in data.rows])
-            col.at = index  # Update the index
-            index += 1
+        new_data = new_cols + new_cols_values
+        new_data = DATA().adds(new_data)
         
-        # Build new rows
-        rows = []
-        for i in range(len(data.rows)):
-            row = []
-            for col_values in new_cols_values:
-                row.append(col_values[i])
-            rows.append(row)
-        
-        # Create new DATA object
-        new_data = DATA().adds([[col.txt for col in new_cols]] + rows)
         # Confirm that the x columns are all NUM
         assert all([isinstance(col, NUM) for col in new_data.cols.x])
         return new_data

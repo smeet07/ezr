@@ -91,10 +91,12 @@ def main():
             all_results = []
             pipelines = get_pipelines(d)
             for pipeline in pipelines:
-                results = run_experiment(d, pipeline)
-                print(f"Results for {pipeline.name}")
-                all_results.extend([(pipeline.name, *result) for result in results])
-
+                try:
+                    results = run_experiment(d, pipeline)
+                    print(f"Results for {pipeline.name}")
+                    all_results.extend([(pipeline.name, *result) for result in results])
+                except Exception as e:
+                    print(f"An error occurred: {e}")
 
             # Print results
             for method_name, n_components, last, result, duration, xcols, xcols_reduced in all_results:
