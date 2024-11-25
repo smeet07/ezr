@@ -9,22 +9,36 @@ from ezr import the, DATA, csv
 from modules.dimensionality import PCAProcessor, FAMDProcessor, MCAProcessor
 from modules.discretization import DiscretizationProcessor, DiscretizeTypes
 from modules.one_hot import OneHotPreprocessor
-from modules.feature_elimination import FeatureEliminationProcessor, CosineSimilarity, MutualInformationSimilarity, VarianceRelevance, EntropyRelevance, CorrelationBasedFeatureElimination
+from modules.feature_elimination import FeatureEliminationProcessor, CosineSimilarity, MutualInformationSimilarity, VarianceRelevance, EntropyRelevance
 import stats
 import concurrent.futures
+import logging
 
+# Configure logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+# Define lambda and epsilon for FOCUS function
 LAMBDA = 0.25
 EPSILON = 1E-30
 
 def focus_score(B, R, t):
-    mt = (exp(LAMBDA * t) - 1) / (exp(LAMBDA * (B - 1)) - 1) + 1
-    return ((B + 1) ** mt + (R + 1)) / (abs(B - R) + EPSILON)
+    try:
+        # Avoid division by zero when B=1 by adjusting mt calculation
+        mt = (exp(LAMBDA * t) - 1) / (exp(LAMBDA * (B - 1)) - 1) + 1 if B != 1 else 1
+        score = ((B + 1) ** mt + (R + 1)) / (abs(B - R) + EPSILON)
+        real_score = abs(score)  # Take the absolute value of the complex number if any
+        logger.debug(f"FOCUS score calculation: B={B}, R={R}, t={t}, mt={mt}, score={real_score}")
+        return real_score
+    except Exception as e:
+        logger.error(f"Error in FOCUS score calculation: {e}")
+        return float('-inf')  # Return a very low score in case of error
 
 scoring_policies = [
     ('exploit', lambda B, R: B - R),
-    ('explore', lambda B, R: (exp(B) + exp(R)) / (1E-30 + abs(exp(B) - exp(R)))),
     ('Random', lambda B, R: random.random()),
-    ('FOCUS', lambda B, R: focus_score(B, R, the.iter))
+    ('FOCUS', lambda B, R: focus_score(B, R, the.iter)),
+    ('explore', lambda B, R: (exp(B) + exp(R)) / (1E-30 + abs(exp(B) - exp(R))))
 ]
 
 class Pipeline:
@@ -51,22 +65,22 @@ def get_pipelines(d):
         n_components_list = [5] + n_components_list
 
     for n_components in n_components_list:
-        sym_dim_red = Pipeline(f"Sym Dim Red ({n_components})", [
+        sym_dim_red = Pipeline(f"Symbolic Dimensionality Reduction ({n_components})", [
             DiscretizationProcessor(DiscretizeTypes.KMeans, 5),
             MCAProcessor(n_components)
         ], n_components)
 
-        num_dim_red = Pipeline(f"Num Dim Red ({n_components})", [
+        num_dim_red = Pipeline(f"Numeric Dimensionality Reduction ({n_components})", [
             OneHotPreprocessor(),
             PCAProcessor(n_components=n_components)
         ], n_components)
 
-        sym_feature_elim = Pipeline(f"Sym Feature Elim ({n_components})", [
+        sym_feature_elim = Pipeline(f"Symbolic Feature Elimation ({n_components})", [
             DiscretizationProcessor(DiscretizeTypes.KMeans, 5),
             FeatureEliminationProcessor(EntropyRelevance(0), MutualInformationSimilarity(0.7), n_components)
         ], n_components)
 
-        num_feature_elim = Pipeline(f"Num Feature Elim ({n_components})", [
+        num_feature_elim = Pipeline(f"Numeric Feature Elimination ({n_components})", [
             OneHotPreprocessor(),
             FeatureEliminationProcessor(VarianceRelevance(0), CosineSimilarity(0.95), n_components)
         ], n_components)
@@ -83,26 +97,29 @@ def get_pipelines(d):
 def run_experiment(d, pipeline: 'Pipeline'):
     results = []
     the.Last = 20
+    
     for policy_name, policy_func in scoring_policies:
         start = time.time()
         reduced_data = pipeline.transform(d)
-        result = [reduced_data.chebyshev(reduced_data.shuffle().activeLearning(score=policy_func)[0]) for _ in range(20)]
-        duration = (time.time() - start) / 20
+        result = []
+        for _ in range(the.Last):
+            result.append(reduced_data.chebyshev(reduced_data.shuffle().activeLearning(score=policy_func)[0]))
+        duration = (time.time() - start) / the.Last
         print(f"{pipeline.name} (Last={the.Last}, Policy={policy_name}): {duration:.2f} secs")
         results.append((pipeline.n_components, the.Last, policy_name, result, duration, len(d.cols.x), len(reduced_data.cols.x)))
+    
     return results
 
 def process_file(file, datasets_path):
     train_file = os.path.join(datasets_path, file)
     results = []
+    
     try:
         the.train = train_file
         d = DATA().adds(csv(the.train))
         
-        print(f"Processing {file}...")
-        print(f"rows: {len(d.rows)}")
-        print(f"xcols: {len(d.cols.x)}")
-        print(f"ycols: {len(d.cols.y)}\n")
+        logger.info(f"Processing {file}...")
+        logger.debug(f"rows: {len(d.rows)}, xcols: {len(d.cols.x)}, ycols: {len(d.cols.y)}")
 
         pipelines = get_pipelines(d)
         
@@ -111,10 +128,10 @@ def process_file(file, datasets_path):
                 pipeline_results = run_experiment(d, pipeline)
                 results.extend([(file, pipeline.name, *result) for result in pipeline_results])
             except Exception as e:
-                print(f"An error occurred processing pipeline {pipeline.name} for {file}: {e}")
+                logger.error(f"An error occurred processing pipeline {pipeline.name} for {file}: {e}")
 
     except Exception as e:
-        print(f"An error occurred processing file {file}: {e}")
+        logger.error(f"An error occurred processing file {file}: {e}")
 
     return results
 
@@ -157,9 +174,11 @@ def main():
                 ranks = stats.report(somes, 0.01)
 
                 for rank in ranks:
-                    method, last_str, policy_str = rank.txt.split(",")
-                    filterr = (df["method"] == method) & (df["last"] == int(last_str)) & (df["policy"] == policy_str)
-                    df.loc[filterr, "rank"] = int(rank.rank)
+                    method_last_policy_strs= rank.txt.split(",")
+                    if len(method_last_policy_strs) == 3:
+                        method,last_str ,policy_str=method_last_policy_strs 
+                        filterr =(df["method"] == method)&(df["last"] == int(last_str)) & (df["policy"] == policy_str)
+                        df.loc[filterr,"rank"]=int(rank.rank)
 
                 # Print output specific to each file before saving it to CSV
                 print(f"\nResults for {file}:")
@@ -168,11 +187,11 @@ def main():
                 all_results_df_list.append(df)
 
             except Exception as e:
-                print(f"An error occurred processing {file}: {e}")
+                logger.error(f"An error occurred processing {file}: {e}")
 
     # Concatenate all DataFrames and save to a single CSV file
-    final_df = pd.concat(all_results_df_list)
-    final_df.to_csv("results.csv", index=False)
+    final_df=pd.concat(all_results_df_list)
+    final_df.to_csv("results.csv",index=False)
 
 if __name__ == "__main__":
     random.seed(the.seed)

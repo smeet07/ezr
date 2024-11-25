@@ -15,7 +15,6 @@ class PCAProcessor:
         num_cols = [col for col in data.cols.x if isinstance(col, NUM)]
         sym_cols = [col for col in data.cols.x if isinstance(col, SYM)]
         y_cols = data.cols.y
-        
         assert len(sym_cols) != 0, "All columns must be numeric for PCA"
         assert len(num_cols) == 0, "No numeric columns to apply PCA"
             
@@ -49,6 +48,7 @@ class MCAProcessor:
         sym_cols = [col for col in data.cols.x if isinstance(col, SYM)]
         num_cols = [col for col in data.cols.x if isinstance(col, NUM)]
         y_cols = data.cols.y
+        
         
         assert len(sym_cols) == 0, "No categorical columns to apply MCA"
         assert len(num_cols) != 0, "All columns must be categorical (SYM) for MCA"
@@ -142,7 +142,7 @@ class FAMDProcessor:
         return new_data
     
 def main():
-    d = DATA().adds(csv('data/our_datasets/FFM-125-25-0.50-SAT-1.csv'))
+    d = DATA().adds(csv(the.train))
     preprocessor = FAMDProcessor(n_components=2)
     # new_data = DiscretizationProcessor(DiscretizeTypes.KMeans, 5).transform(d)
     new_data = preprocessor.transform(d)
