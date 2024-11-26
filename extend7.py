@@ -15,6 +15,7 @@ import logging
 from collections import namedtuple
 import warnings
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from copy import deepcopy
 
 def warn(*args, **kwargs):
     pass
@@ -72,12 +73,19 @@ class DullColumnRemover:
         self.threshold = threshold
 
     def transform(self, d):
+        d = deepcopy(d)
         cols_to_keep = [col for col in d.cols.x if col.div() > self.threshold] + d.cols.y
         
         rows = np.array(d.rows)
         filterr = [col in cols_to_keep for col in d.cols.all]
-        rows = [[int(v) for v in row] for row in rows[:, filterr]]
-        return DATA().adds([[col.txt for col in cols_to_keep]] + rows)
+        rows = [[float(v) for v in row] for row in rows[:, filterr]]
+        d.cols.all = cols_to_keep
+        for i, col in enumerate(cols_to_keep):
+            col.at = i
+        d.cols.x = [col for col in cols_to_keep if col not in d.cols.y]
+        d.rows = rows
+
+        return d
 
 original = Pipeline("Original", [])
 
