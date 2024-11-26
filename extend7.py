@@ -28,6 +28,10 @@ logger = logging.getLogger(__name__)
 # Define lambda and epsilon for FOCUS function
 LAMBDA = 0.25
 EPSILON = 1E-30
+NR_RUNS = 20
+DATA_PATH = "data/our_datasets"
+
+
 
 def focus_score(B, R, t):
     try:
@@ -63,6 +67,18 @@ class Pipeline:
             d = preprocessor.transform(d)
         return d
 
+class DullColumnRemover:
+    def __init__(self, threshold=0.1):
+        self.threshold = threshold
+
+    def transform(self, d):
+        cols_to_keep = [col for col in d.cols.x if col.div() > self.threshold] + d.cols.y
+        
+        rows = np.array(d.rows)
+        filterr = [col in cols_to_keep for col in d.cols.all]
+        rows = [[int(v) for v in row] for row in rows[:, filterr]]
+        return DATA().adds([[col.txt for col in cols_to_keep]] + rows)
+
 original = Pipeline("Original", [])
 
 def get_pipelines(d):
@@ -71,40 +87,49 @@ def get_pipelines(d):
     # if all([n_components > 10 for n_components in n_components_list]):
     #     n_components_list.append(5)
     
-    n_components_list = [i for i in [5, 10, 20] if i < len(d.cols.x)]
+    smaller_data = DullColumnRemover().transform(d)
+    logger.info(f"Reduced data to {len(smaller_data.cols.x)} from {len(d.cols.x)} columns")
+    n_components_list = [i for i in [5, 10, 20] if i < len(smaller_data.cols.x)]
 
     for n_components in n_components_list:
         sym_dim_red_kmeans = Pipeline(f"Symbolic Dimensionality Reduction ({n_components}) with Kmeans Discretization", [
+            DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.KMeans, 5),
             MCAProcessor(n_components)
         ], n_components)
     
         sym_dim_red_efb = Pipeline(f"Symbolic Dimensionality Reduction ({n_components}) with EFB Discretization", [
+            DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.EqualFrequencyBins, 5),
             MCAProcessor(n_components)
         ], n_components)
 
         num_dim_red = Pipeline(f"Numeric Dimensionality Reduction ({n_components})", [
+            DullColumnRemover(),
             OneHotPreprocessor(),
             PCAProcessor(n_components=n_components)
         ], n_components)
 
         sym_feature_elim_kmeans = Pipeline(f"Symbolic Feature Elimation ({n_components}) with Kmeans Discretization", [
+            DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.KMeans, 5),
             FeatureEliminationProcessor(EntropyRelevance(0), MutualInformationSimilarity(0.7), n_components)
         ], n_components)
         
         sym_feature_elim_efb = Pipeline(f"Symbolic Feature Elimation ({n_components}) with EFB Discretization", [
+            DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.EqualFrequencyBins, 5),
             FeatureEliminationProcessor(EntropyRelevance(0), MutualInformationSimilarity(0.7), n_components)
         ], n_components)
 
         num_feature_elim = Pipeline(f"Numeric Feature Elimination ({n_components})", [
+            DullColumnRemover(),
             OneHotPreprocessor(),
             FeatureEliminationProcessor(VarianceRelevance(0), CosineSimilarity(0.95), n_components)
         ], n_components)
 
         famd = Pipeline(f"FAMD ({n_components})", [
+            DullColumnRemover(),
             FAMDProcessor(n_components)
         ], n_components)
 
@@ -113,47 +138,40 @@ def get_pipelines(d):
     pipelines.append(original)
     return pipelines
 
-def remove_dull_columns(d):
-    cols_to_keep = [col for col in d.cols.x if col.div() > 0.1] + d.cols.y
-    logger.info(f"Keeping {len(cols_to_keep)} columns out of {len(d.cols.all)}")
-    
-    rows = np.array(d.rows)
-    filterr = [col in cols_to_keep for col in d.cols.all]
-    rows = [[int(v) for v in row] for row in rows[:, filterr]]
-    return DATA().adds([[col.txt for col in cols_to_keep]] + rows)
-
-NR_RUNS = 20
 
 def run_experiment(ex: Experiment):
-    start = time.time()
-    reduced_data = ex.pipeline.transform(ex.data)
-    results = [reduced_data.chebyshev(reduced_data.shuffle().activeLearning(score=ex.policy.function)[0]) for _ in range(NR_RUNS)]
-    duration = (time.time() - start) / NR_RUNS
-    logger.info(f"{ex.pipeline.name} (Last={ex.last}, Policy={ex.policy.name}): {duration:.2f} secs")
-    return Result(
-        dataset=ex.file,
-        method=ex.pipeline.name,
-        n_components=ex.pipeline.n_components,
-        last=ex.last,
-        policy=ex.policy.name,
-        mean=np.mean(results),
-        std=np.std(results),
-        time=duration,
-        xcols=len(ex.data.cols.x),
-        xcols_reduced=len(reduced_data.cols.x),
-        rank=-1,
-        all_results=results
-    )
+    try:
+        start = time.time()
+        reduced_data = ex.pipeline.transform(ex.data)
+        results = [reduced_data.chebyshev(reduced_data.shuffle().activeLearning(score=ex.policy.function)[0]) for _ in range(NR_RUNS)]
+        duration = (time.time() - start) / NR_RUNS
+        logger.info(f"{ex.pipeline.name} (Last={ex.last}, Policy={ex.policy.name}): {duration:.2f} secs")
+        return Result(
+            dataset=ex.file,
+            method=ex.pipeline.name,
+            n_components=ex.pipeline.n_components,
+            last=ex.last,
+            policy=ex.policy.name,
+            mean=np.mean(results),
+            std=np.std(results),
+            time=duration,
+            xcols=len(ex.data.cols.x),
+            xcols_reduced=len(reduced_data.cols.x),
+            rank=-1,
+            all_results=results
+        )
+    except Exception as e:
+        logger.error(f"Error in {ex.pipeline.name} (Last={ex.last}, Policy={ex.policy.name}): {e}")
+        return None
 
-DATA_PATH = "data/data2"
 
 def main():
     df = pd.DataFrame(columns=Result._fields)
     
     for data_path in [os.path.join(DATA_PATH, file) for file in os.listdir(DATA_PATH) if file.endswith(".csv")]:
+            
         logger.info(f"Processing {data_path}...")
         data = DATA().adds(csv(data_path))
-        data = remove_dull_columns(data)
         results = []
         
         for last in [20, 30, 40]: # we cannot run it parallel because it is global variable
@@ -169,7 +187,8 @@ def main():
                         futures.append(executor.submit(run_experiment, experiment))
             
             for future in as_completed(futures):
-                results.append(future.result())
+                if future.result() is not None:
+                    results.append(future.result())
                     
         df = pd.concat([df, pd.DataFrame([result._asdict() for result in results])], ignore_index=True)
         somes = [stats.SOME(result.all_results, f"{result.method},{result.last},{result.policy}") for result in results]
@@ -180,7 +199,7 @@ def main():
             filterr = (df["method"] == method) & (df["last"] == int(last_str)) & (df["policy"] == policy_str)
             df.loc[filterr, "rank"] = int(rank.rank)
             
-        df.to_csv("results.csv", index=False)
+        df.drop(columns=["all_results"], inplace=False).to_csv("results.csv", index=False)
         logger.info(f"Results for {data_path} saved to results.csv")
 
 if __name__ == "__main__":
