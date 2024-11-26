@@ -51,7 +51,7 @@ def get_pipelines(d):
         n_components_list = [5] + n_components_list
 
     for n_components in n_components_list:
-        sym_dim_red = Pipeline(f"Sym Dim Red ({n_components})", [
+        sym_dim_red_kmeans = Pipeline(f"Sym Dim Red ({n_components}) Kmeans", [
             DiscretizationProcessor(DiscretizeTypes.KMeans, 5),
             MCAProcessor(n_components)
         ], n_components)
@@ -61,7 +61,7 @@ def get_pipelines(d):
             PCAProcessor(n_components=n_components)
         ], n_components)
 
-        sym_feature_elim = Pipeline(f"Sym Feature Elim ({n_components})", [
+        sym_feature_elim_kmeans = Pipeline(f"Sym Feature Elim ({n_components}) Kmean", [
             DiscretizationProcessor(DiscretizeTypes.KMeans, 5),
             FeatureEliminationProcessor(EntropyRelevance(0), MutualInformationSimilarity(0.7), n_components)
         ], n_components)
@@ -75,34 +75,34 @@ def get_pipelines(d):
             FAMDProcessor(n_components)
         ], n_components)
 
-        pipelines.extend([sym_feature_elim, sym_dim_red, num_dim_red, num_feature_elim, famd])
+        pipelines.extend([sym_feature_elim, original, sym_dim_red, num_dim_red, num_feature_elim, famd])
 
     pipelines.append(original)
     return pipelines
 
-def run_experiment(d, pipeline: 'Pipeline'):
-    results = []
-    the.Last = 20
-    for policy_name, policy_func in scoring_policies:
-        start = time.time()
-        reduced_data = pipeline.transform(d)
-        result = [reduced_data.chebyshev(reduced_data.shuffle().activeLearning(score=policy_func)[0]) for _ in range(20)]
-        duration = (time.time() - start) / 20
-        print(f"{pipeline.name} (Last={the.Last}, Policy={policy_name}): {duration:.2f} secs")
-        results.append((pipeline.n_components, the.Last, policy_name, result, duration, len(d.cols.x), len(reduced_data.cols.x)))
-    return results
+import os
+import pandas as pd
 
-def process_file(file, datasets_path):
-    train_file = os.path.join(datasets_path, file)
-    results = []
-    try:
-        the.train = train_file
-        d = DATA().adds(csv(the.train))
-        
-        print(f"Processing {file}...")
-        print(f"rows: {len(d.rows)}")
-        print(f"xcols: {len(d.cols.x)}")
-        print(f"ycols: {len(d.cols.y)}\n")
+def main():
+    datasets_path = "data/our_datasets"
+    df = pd.DataFrame(columns=["dataset", "method", "n_components", "last", "mean", "std", "time", "xcols", "xcols_reduced", "rank"])
+    index = 0
+    for file in os.listdir(datasets_path):
+        if not file.endswith(".csv"):
+            continue
+        print(f"Running {file}...")
+        train_file = os.path.join(datasets_path, file)
+            
+
+        try:
+            the.train = train_file
+            d = DATA().adds(csv(the.train))
+            
+            # remove correlated columns
+
+            print(f"rows: {len(d.rows)}")
+            print(f"xcols: {len(d.cols.x)}")
+            print(f"ycols: {len(d.cols.y)}\n")
 
         pipelines = get_pipelines(d)
         
