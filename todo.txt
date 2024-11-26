@@ -1,15 +1,12 @@
-prerequisite 
-fix the "5" component logic (priority3)
-do the focus implementation and add in scoring policy(priority2)
-remove highly correlated data (priority1)
-fix the naming in pipeline(priority4)
-Try error handling 
+analysis:
+    for each policy separately
+    for each last
+    for each ratio
+    for method
+    based time
+    for categorical datasets
+    for symbolic datasets
 
-
-
-main analysis after runnig the experiment 
-analysis of categorical vs symbolic data
-analysis on dataset size too
 
 
 
