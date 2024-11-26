@@ -35,6 +35,7 @@ class FeatureEliminationProcessor:
         data.rows = [[int(v) for v in row] for row in rows[:, filterr]]
         data.cols.all = [col for col in data.cols.all if col not in columns_to_remove]
         data.cols.x = [col for col in data.cols.x if col not in columns_to_remove]
+        data.cols.names = [col.txt for col in data.cols.all]
         for i, col in enumerate(data.cols.all):
             col.at = i
         

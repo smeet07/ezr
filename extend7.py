@@ -83,6 +83,7 @@ class DullColumnRemover:
         for i, col in enumerate(cols_to_keep):
             col.at = i
         d.cols.x = [col for col in cols_to_keep if col not in d.cols.y]
+        d.cols.names = [col.txt for col in d.cols.all]
         d.rows = rows
 
         return d
