@@ -1,242 +1,505 @@
 dataset,method,n_components,last,policy,mean,std,time,xcols,xcols_reduced,rank
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with Kmeans Discretization,20.0,20,explore,0.20901162790697675,0.08272328307681599,1.5654471874237061,23,20,3
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,20,Random,0.209593023255814,0.06743872787432051,0.26478424072265627,23,21,4
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,20,exploit,0.18139534883720929,0.08339730733507493,0.3079963088035583,23,10,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,20,FOCUS,0.18953488372093022,0.0775765293214927,0.3974552869796753,23,10,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,20,exploit,0.18139534883720929,0.0726534853572712,1.0483566045761108,23,20,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,20,Random,0.19738372093023254,0.06148719675722902,1.0168372988700867,23,20,4
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,20,explore,0.16860465116279072,0.09585091858628432,0.282838499546051,23,10,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,20,FOCUS,0.1941860465116279,0.07545606782747731,0.8482106447219848,23,10,4
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,20,exploit,0.175,0.06360635174802394,0.2725576996803284,23,21,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,20,explore,0.18255813953488376,0.07895854009937191,0.8938813924789428,23,10,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,20,exploit,0.16627906976744186,0.06547864290837715,0.22154099941253663,23,6,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,20,Random,0.1697674418604651,0.07889858350552267,0.34708030223846437,23,10,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,20,explore,0.2020348837209302,0.059543371260906246,0.9806424140930176,23,20,4
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,20,Random,0.22063953488372096,0.07469233360819402,0.5155218124389649,23,5,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,20,exploit,0.1683139534883721,0.07953596745487689,1.5197087526321411,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,20,Random,0.21627906976744185,0.08323502403801526,1.4002867460250854,23,11,4
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,20,FOCUS,0.1744186046511628,0.08303986544817268,0.24813554286956788,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,20,Random,0.23168604651162789,0.06632176817212848,0.8466446399688721,23,10,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,20,FOCUS,0.17209302325581394,0.0625749955677847,1.4637975335121154,23,11,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,20,explore,0.20203488372093026,0.07555623463137356,0.16842620372772216,23,6,4
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,20,exploit,0.20465116279069773,0.07076801885908345,0.3755902528762817,23,20,4
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,20,exploit,0.1872093023255814,0.1096912920724204,0.27502429485321045,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,20,FOCUS,0.17325581395348838,0.07371579470044402,1.0033738493919373,23,20,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with Kmeans Discretization,5.0,20,exploit,0.234593023255814,0.06965288560201896,1.7743144392967225,23,5,4
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,20,Random,0.20348837209302326,0.07163205968028577,0.36906770467758176,23,20,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,20,exploit,0.2,0.07368827682676679,0.49409871101379393,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,20,explore,0.17790697674418607,0.07178290387930536,1.40745370388031,23,11,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,20,FOCUS,0.18372093023255814,0.08573166786589191,0.36403329372406007,23,20,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,20,exploit,0.19767441860465115,0.04850384561538188,0.8014086961746216,23,10,4
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,20,explore,0.2,0.08988906088412879,0.3447993040084839,23,20,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,20,exploit,0.21598837209302327,0.07667533468921112,0.7244185447692871,23,11,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,20,Random,0.16744186046511628,0.09202957645306688,0.8718995451927185,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,10.0,20,explore,0.18372093023255814,0.07532155693349604,0.7172770500183105,23,10,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,20,exploit,0.15813953488372093,0.08904274287942626,1.813230848312378,23,21,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,20,explore,0.16744186046511628,0.06764204452208832,0.839228892326355,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,20,FOCUS,0.20232558139534884,0.05557117742022568,1.7620476961135865,23,21,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,20,Random,0.21715116279069768,0.06933672764829257,0.26508924961090086,23,5,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,20,explore,0.16279069767441862,0.061967035323135945,1.7620282411575316,23,21,3
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,20,FOCUS,0.1633720930232558,0.07188877669128764,0.26486610174179076,23,21,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,20,exploit,0.17906976744186048,0.08192518583166762,0.17034834623336792,23,6,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,20,Random,0.22645348837209306,0.0595603994649466,0.15884324312210082,23,6,4
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,10.0,20,FOCUS,0.18691860465116278,0.0719680790891906,0.889618742465973,23,10,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,20,exploit,0.2,0.08136211946295768,0.27591785192489626,23,11,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,20,FOCUS,0.2133720930232558,0.07669351745260906,1.1569022417068482,23,6,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,20,FOCUS,0.19302325581395346,0.06980619078978434,0.9312135457992554,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,20,Random,0.19331395348837205,0.06256081411244674,1.776412546634674,23,21,4
-data/our_datasets/xomo_ground.csv,Original,,20,explore,0.18730459237902014,0.08980850088359728,0.09031819105148316,23,23,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,20,Random,0.18488372093023256,0.07444585256980985,0.3038058042526245,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with Kmeans Discretization,5.0,20,explore,0.20581395348837211,0.07687620779565393,1.7562687993049622,23,5,4
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,20,explore,0.20901162790697678,0.08686900661592761,0.4814070463180542,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,20,exploit,0.15465116279069765,0.07509683670915128,1.237963902950287,23,20,2
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,20,FOCUS,0.1767441860465116,0.06796111254047654,0.31301820278167725,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,20,Random,0.2,0.08588923401218321,1.1863253951072692,23,20,4
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,20,explore,0.1686046511627907,0.0753125809986571,0.29407700300216677,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,20,FOCUS,0.23633720930232566,0.0709510787132845,1.1870016932487488,23,20,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,20,explore,0.15552325581395351,0.08322030147511796,0.13822579383850098,23,6,1
-data/our_datasets/xomo_ground.csv,Original,,20,FOCUS,0.20878245145763757,0.08008566751471459,0.24372910261154174,23,23,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,20,explore,0.16162790697674417,0.05671510882910325,1.1601721048355103,23,20,3
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,20,exploit,0.18604651162790697,0.07748061046026829,0.43258990049362184,23,21,3
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,20,FOCUS,0.15813953488372096,0.06561272548681807,0.4422417521476746,23,21,2
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,20,FOCUS,0.2232558139534883,0.12292628173397684,0.18697733879089357,23,6,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,20,FOCUS,0.20232558139534884,0.07283934773658522,0.22306699752807618,23,6,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,20,exploit,0.19622093023255813,0.09613042887873156,0.37136155366897583,23,18,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,20,Random,0.2078488372093023,0.07242690408895926,0.36759079694747926,23,18,4
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,20,explore,0.19854651162790699,0.06532035607935888,0.2765072464942932,23,21,4
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,20,explore,0.22296511627906979,0.09448837137754781,0.43938809633255005,23,21,4
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,20,explore,0.1686046511627907,0.0677518936370103,0.2721135139465332,23,21,3
-data/our_datasets/xomo_ground.csv,Original,,20,Random,0.1695545808402149,0.05058710534238807,0.24513895511627198,23,23,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,10.0,20,exploit,0.20116279069767443,0.06987394970964472,0.7545691967010498,23,10,4
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,20,FOCUS,0.2020348837209302,0.07802132791435082,0.4850782513618469,23,5,4
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,20,explore,0.2325581395348837,0.10002703798886775,0.2675605535507202,23,5,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,20,explore,0.22296511627906979,0.08672881199877759,1.0959998965263367,23,6,4
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,20,Random,0.1767441860465116,0.07030798352479524,0.43625043630599974,23,21,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,20,Random,0.20436046511627906,0.07502647360420109,0.15703829526901245,23,6,4
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,20,Random,0.20581395348837211,0.08924750012784542,0.2866961002349854,23,21,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,20,explore,0.19854651162790699,0.06235515937343718,0.3187671422958374,23,18,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,20,exploit,0.2133720930232558,0.05441872888079638,1.1843048930168152,23,6,4
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,20,FOCUS,0.18953488372093025,0.08132056365072493,0.2621035575866699,23,21,3
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,20,exploit,0.20232558139534884,0.07019250359435612,0.2624837517738342,23,21,4
-data/our_datasets/xomo_ground.csv,Original,,20,exploit,0.20968852754697442,0.08692853806154414,0.2259000539779663,23,23,4
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,20,FOCUS,0.20930232558139533,0.07713080907803256,0.36123549938201904,23,18,4
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,20,Random,0.21279069767441863,0.06547864290837715,1.1757257461547852,23,6,4
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,30,Random,0.17790697674418604,0.05417905933591509,0.33570524454116824,23,10,3
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,30,FOCUS,0.14999999999999997,0.06878179730776862,0.8463256478309631,23,21,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,30,exploit,0.11046511627906977,0.029301402717102687,1.8187857866287231,23,20,1
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,30,FOCUS,0.1186046511627907,0.06148513519256877,0.9759558439254761,23,21,1
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,30,FOCUS,0.18720930232558142,0.06473100306845013,0.6506454944610596,23,6,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,30,Random,0.18604651162790697,0.0822217187426218,0.5188534021377563,23,20,3
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,30,Random,0.14970930232558138,0.07256678075407698,0.44303754568099973,23,21,2
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,30,explore,0.18255813953488373,0.09596370099751299,0.6013589024543762,23,21,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,30,exploit,0.1395348837209302,0.06659451657337839,0.5616896986961365,23,6,2
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,30,explore,0.11976744186046515,0.06751199240462692,0.8058745503425598,23,11,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,30,FOCUS,0.16511627906976745,0.08185914375254903,0.6977961421012878,23,6,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,30,explore,0.1267441860465116,0.04620538717745471,0.4267083525657654,23,20,2
-data/our_datasets/xomo_ground.csv,Original,,30,Random,0.19334963496457672,0.07360982139422169,0.5630766034126282,23,23,4
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,30,FOCUS,0.1383720930232558,0.06129793187487071,0.44815338850021363,23,18,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,30,explore,0.18953488372093025,0.057095273010190316,0.5890997052192688,23,6,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,30,explore,0.17761627906976746,0.05995635130371885,0.4599895477294922,23,18,3
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,30,exploit,0.1453488372093023,0.07743697170126711,0.3962047934532166,23,21,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,30,exploit,0.13255813953488374,0.05047101026560629,2.4839235067367555,23,21,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,30,explore,0.1575581395348837,0.07411137526556487,1.9460283517837524,23,20,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,30,explore,0.16366279069767445,0.07336359273357404,1.7542147994041444,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,30,Random,0.17906976744186048,0.06373111444671964,1.9115783333778382,23,20,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,30,FOCUS,0.18023255813953487,0.0648978895924457,1.9702125906944274,23,20,3
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,30,exploit,0.12674418604651166,0.049044410951077075,0.9174185395240784,23,21,1
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,30,exploit,0.14389534883720928,0.05475234942394582,0.5854695439338684,23,20,2
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,30,exploit,0.1069767441860465,0.04616147265413769,0.3594114422798157,23,10,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,30,explore,0.12674418604651164,0.04959271653985145,0.7989448666572571,23,6,1
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,30,explore,0.14302325581395348,0.06295198922622867,0.872939157485962,23,21,2
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,30,explore,0.14651162790697672,0.0530823823744806,0.83221515417099,23,21,3
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,30,Random,0.15348837209302324,0.05762563578308776,0.9085596919059753,23,21,3
-data/our_datasets/xomo_ground.csv,Original,,30,exploit,0.14683697288528075,0.07488082523434202,0.5728441119194031,23,23,2
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,30,Random,0.16627906976744186,0.06711025130468873,0.38004854917526243,23,5,3
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,30,exploit,0.17674418604651165,0.08898198358004183,0.9645014405250549,23,21,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,30,explore,0.15813953488372093,0.07485338111363293,1.2862529039382935,23,20,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,30,explore,0.16511627906976742,0.062358547338567084,0.6615076065063477,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,30,Random,0.16860465116279066,0.05141323481263754,0.9413985967636108,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,30,exploit,0.1453488372093023,0.06363557345354479,1.0946054935455323,23,10,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,30,exploit,0.10930232558139534,0.05047101026560629,1.5853609442710876,23,11,1
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,30,FOCUS,0.16395348837209303,0.07223354646742955,1.1003286957740783,23,10,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,30,FOCUS,0.16511627906976742,0.04760346393129935,2.551695501804352,23,21,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,30,Random,0.14999999999999997,0.052248004508513884,1.6047794461250304,23,11,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,30,exploit,0.16046511627906976,0.07088256118199149,0.97029709815979,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,30,explore,0.1302325581395349,0.04375555284238786,2.4979644536972048,23,21,1
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,30,exploit,0.15930232558139534,0.05467589742097092,0.7552132606506348,23,5,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,30,Random,0.1686046511627907,0.05831369264241784,0.59397394657135,23,6,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,30,FOCUS,0.14418604651162792,0.07114910949199234,0.31843175888061526,23,5,2
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,30,Random,0.15348837209302324,0.06875230464695109,1.0051557064056396,23,21,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,30,FOCUS,0.1372093023255814,0.04760346393129935,1.4958688020706177,23,20,2
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,30,exploit,0.13691860465116282,0.07078891278347565,0.41883144378662107,23,18,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,30,explore,0.18110465116279068,0.07565459335654216,1.0535288095474242,23,10,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,30,FOCUS,0.17441860465116282,0.06800089077773697,0.6685624361038208,23,6,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,30,exploit,0.1813953488372093,0.06436443024696767,0.6825078964233399,23,6,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,30,FOCUS,0.17906976744186048,0.0678416378875108,0.7042063474655151,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with Kmeans Discretization,5.0,30,FOCUS,0.17093023255813955,0.05941621530716845,1.7357479095458985,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,30,explore,0.1418604651162791,0.05924529861793953,1.2557300448417663,23,11,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,30,Random,0.163953488372093,0.0790270062211451,0.766464352607727,23,6,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,30,explore,0.16976744186046516,0.08323502403801526,0.3215323567390442,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,30,Random,0.17093023255813952,0.05895933643761497,1.0300294518470765,23,10,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,30,FOCUS,0.15232558139534885,0.07936845091433266,0.528429102897644,23,20,3
-data/our_datasets/xomo_ground.csv,Original,,30,FOCUS,0.16269952721995978,0.06772577323148991,0.5818744659423828,23,23,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,30,FOCUS,0.148546511627907,0.06252298117243787,1.2015310645103454,23,11,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,30,exploit,0.16511627906976742,0.06449034708773047,1.370590901374817,23,20,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,30,Random,0.16511627906976747,0.06192338118927604,0.30729600191116335,23,11,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,30,FOCUS,0.1825581395348837,0.056619668948557446,1.5631282567977904,23,11,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,30,explore,0.20348837209302326,0.08218059760039359,0.6600377440452576,23,6,4
-data/our_datasets/xomo_ground.csv,Original,,30,explore,0.14145357684958865,0.04989667388036733,0.46977760791778567,23,23,2
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,30,Random,0.18372093023255814,0.06815977158024579,0.6219348907470703,23,6,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,30,Random,0.22529069767441862,0.062317201580010445,2.2224990487098695,23,21,4
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,30,exploit,0.1325581395348837,0.06201065872545759,0.29633274078369143,23,11,1
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,30,Random,0.1627906976744186,0.06326265352900207,0.7110695958137512,23,5,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,30,FOCUS,0.15697674418604649,0.0753125809986571,0.4129531025886536,23,11,2
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,30,FOCUS,0.12558139534883722,0.05374055817809927,0.46154495477676394,23,21,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,30,Random,0.1941860465116279,0.051096680331906584,1.3196540474891663,23,20,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,30,exploit,0.11046511627906978,0.048712465268961426,0.5205433964729309,23,6,0
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,30,FOCUS,0.13139534883720932,0.06830838671034659,0.39496089220047,23,10,1
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,10.0,30,FOCUS,0.1752906976744186,0.07340965297432421,1.6932883381843566,23,10,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,30,exploit,0.1799418604651163,0.07574836208864871,0.3235966920852661,23,5,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,30,explore,0.15930232558139537,0.1068945589258923,0.31737030744552613,23,10,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with Kmeans Discretization,20.0,30,FOCUS,0.14651162790697675,0.06330538413402884,2.096155655384064,23,20,2
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,30,Random,0.17093023255813952,0.047816012081283936,0.4696770548820496,23,18,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,40,exploit,0.13023255813953488,0.07368827682676679,0.43911861181259154,23,10,1
-data/our_datasets/xomo_ground.csv,Original,,40,exploit,0.1289090837075671,0.03430580902436497,1.2606653928756715,23,23,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,40,explore,0.14767441860465114,0.0561400358352247,1.6755174040794372,23,20,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,40,Random,0.15581395348837207,0.0658184730143484,0.7562236547470093,23,20,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,40,Random,0.16627906976744183,0.06031959232252529,2.1785695433616636,23,20,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,40,Random,0.18226744186046512,0.061755982537110135,0.3816359043121338,23,10,3
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,40,explore,0.11976744186046513,0.05002703433557896,1.3263375997543334,23,21,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,40,Random,0.1569767441860465,0.07163205968028577,1.6978093981742859,23,20,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,40,explore,0.12209302325581399,0.06405910939925265,2.3021915555000305,23,11,0
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,40,exploit,0.11395348837209303,0.047031973060829506,0.79258234500885,23,6,1
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,40,Random,0.14738372093023255,0.06202905314680214,0.7399914503097534,23,18,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,10.0,40,exploit,0.11511627906976744,0.04561638429286751,2.262947654724121,23,10,1
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,40,Random,0.1453488372093023,0.05784810680852441,1.5137488007545472,23,10,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,40,Random,0.1555232558139535,0.06497271861645622,1.2557900309562684,23,11,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,40,explore,0.1534883720930233,0.07441860465116279,0.8292937994003295,23,6,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,40,exploit,0.15930232558139534,0.062086925926569746,1.4604092597961427,23,10,2
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,40,explore,0.12209302325581399,0.07087302305893385,1.002014660835266,23,21,0
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,40,Random,0.18604651162790697,0.059745267807744785,0.36309969425201416,23,5,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,40,Random,0.16627906976744183,0.06629946646580667,0.7817555069923401,23,6,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,40,exploit,0.12325581395348836,0.07751550377906492,0.45278009176254275,23,11,1
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,40,exploit,0.10813953488372093,0.037696662970807746,1.1695725560188293,23,21,1
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,40,explore,0.12180232558139534,0.04561175276466591,0.7656251430511475,23,5,0
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,40,exploit,0.1569767441860465,0.048154137769415475,0.8136740565299988,23,5,2
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,40,FOCUS,0.11976744186046513,0.059869607729562804,1.151139748096466,23,21,0
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,40,explore,0.13604651162790699,0.03697235603624337,0.6547186970710754,23,18,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,40,FOCUS,0.13604651162790696,0.05803478936496642,1.4598745465278626,23,10,2
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,40,Random,0.16976744186046513,0.06744186046511629,1.188663399219513,23,21,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,40,Random,0.1441860465116279,0.0496608290792154,0.863644790649414,23,6,2
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,40,FOCUS,0.16511627906976747,0.060599135910676206,0.4436967968940735,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,40,explore,0.13953488372093023,0.04708943425887578,0.8558390021324158,23,6,2
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,40,explore,0.17877906976744187,0.0691072200939847,0.3953136563301086,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,40,FOCUS,0.1625,0.06454470384115703,0.8600519895553589,23,6,3
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,40,exploit,0.14622093023255817,0.07534118806279085,0.6827941060066223,23,18,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,40,exploit,0.11627906976744187,0.06019618188625481,2.3040003418922423,23,20,1
-data/our_datasets/xomo_ground.csv,FAMD (5),5.0,40,FOCUS,0.1372093023255814,0.07917230014208931,1.012812042236328,23,21,1
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,40,explore,0.13372093023255813,0.0653132403255052,0.6135484337806701,23,11,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,40,FOCUS,0.12441860465116276,0.04367823249068128,1.156162142753601,23,11,1
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,40,FOCUS,0.17906976744186048,0.07681462588331973,0.8218799471855164,23,6,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,40,explore,0.10581395348837211,0.046786975671466766,2.3789277911186217,23,20,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,40,FOCUS,0.16511627906976742,0.07674418604651163,2.205186092853546,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,40,Random,0.1511627906976744,0.059971148642919206,2.2043929576873778,23,11,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,10.0,40,explore,0.14302325581395353,0.04893401258721119,1.4396424889564514,23,10,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,40,exploit,0.16395348837209303,0.058127905813720876,0.7452793478965759,23,6,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,40,exploit,0.15,0.04561638429286751,1.7629096984863282,23,20,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with Kmeans Discretization,5.0,40,Random,0.15232558139534885,0.04501967600606032,0.7514200448989868,23,6,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with EFB Discretization,20.0,40,FOCUS,0.14534883720930236,0.0653132403255052,1.717225193977356,23,20,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,40,explore,0.1613372093023256,0.0840086102298618,0.4285428524017334,23,10,2
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,40,Random,0.15784883720930232,0.06221948949408274,0.8503931999206543,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,10.0,40,exploit,0.11395348837209303,0.06614633792245532,2.0828307032585145,23,11,0
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,40,FOCUS,0.12441860465116279,0.03769666297080774,0.903657853603363,23,6,1
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,40,Random,0.1430232558139535,0.04948354146733306,0.48331714868545533,23,11,2
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,40,FOCUS,0.11046511627906977,0.0564283049234927,0.7227410435676574,23,21,0
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (5),5.0,40,exploit,0.1325581395348837,0.06287677132370127,0.6968071103096009,23,6,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (5) with EFB Discretization,5.0,40,explore,0.09999999999999998,0.04771694076437951,0.837898063659668,23,6,0
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,40,FOCUS,0.12093023255813953,0.043258314506368085,0.7414446592330932,23,20,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,40,exploit,0.13720930232558137,0.059699989083690404,1.0962734937667846,23,11,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (10) with EFB Discretization,10.0,40,explore,0.11627906976744189,0.05404162808661512,1.393230950832367,23,11,1
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with EFB Discretization,5.0,40,FOCUS,0.14999999999999997,0.050135025900721164,0.8428344964981079,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with EFB Discretization,20.0,40,FOCUS,0.10930232558139537,0.04231024511316338,2.4697434425354006,23,20,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,40,exploit,0.08953488372093021,0.04112730042750557,3.108361911773682,23,21,0
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (20) with Kmeans Discretization,20.0,40,FOCUS,0.12906976744186047,0.05718991919701367,2.836974799633026,23,20,1
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (20),20.0,40,FOCUS,0.13110465116279071,0.07204318889000388,0.7358395457267761,23,18,1
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,40,Random,0.1418604651162791,0.0544901140179534,1.1427533388137818,23,21,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with Kmeans Discretization,5.0,40,exploit,0.15581395348837207,0.057484684159573377,1.5427970051765443,23,5,3
-data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (5) with Kmeans Discretization,5.0,40,FOCUS,0.16511627906976747,0.054984141476915764,1.945465052127838,23,5,3
-data/our_datasets/xomo_ground.csv,Original,,40,FOCUS,0.12948469332474394,0.05485720884963661,1.1775105595588684,23,23,2
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,40,explore,0.10813953488372093,0.032287077620732144,3.328757905960083,23,21,1
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (10),10.0,40,FOCUS,0.15465116279069768,0.07327426862413093,0.44221271276474,23,10,2
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,40,Random,0.1601744186046512,0.07164326605941662,0.7567387580871582,23,21,2
-data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (10),10.0,40,FOCUS,0.12093023255813953,0.05581395348837209,0.44387389421463014,23,11,0
-data/our_datasets/xomo_ground.csv,Original,,40,explore,0.1291475097948908,0.06162134099071014,0.6506170392036438,23,23,1
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,40,explore,0.11976744186046513,0.041779637728422525,0.5816176533699036,23,20,2
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,40,exploit,0.12558139534883722,0.0412094073178357,1.2014091968536378,23,21,2
-data/our_datasets/xomo_ground.csv,FAMD (10),10.0,40,explore,0.12790697674418602,0.05624830987185035,1.0832790970802306,23,21,1
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,40,Random,0.1441860465116279,0.05532733606218754,3.179798948764801,23,21,3
-data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (20) with Kmeans Discretization,20.0,40,FOCUS,0.13488372093023254,0.06001622279332065,3.1618391990661623,23,21,2
-data/our_datasets/xomo_ground.csv,FAMD (20),20.0,40,exploit,0.12674418604651166,0.05427879077666886,0.5871583461761475,23,21,1
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (20),20.0,40,exploit,0.09534883720930232,0.029324465611438352,0.7666426539421082,23,20,0
-data/our_datasets/xomo_ground.csv,Original,,40,Random,0.17808522937999138,0.061116968282702994,1.169235348701477,23,23,3
-data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (5),5.0,40,exploit,0.12674418604651164,0.09345105121087467,0.3824882984161377,23,5,0
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,20,Random,0.2168604651162791,0.07224524439726501,0.2770787954330444,23,13,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,20,explore,0.1813953488372093,0.06351860597091936,1.3825045466423034,23,9,2
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,20,exploit,0.16627906976744183,0.08361589017835719,0.15083894729614258,23,5,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,20,Random,0.20087209302325584,0.09409762932891452,0.16464210748672486,23,5,3
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,20,FOCUS,0.18604651162790695,0.06976744186046512,0.2785082459449768,23,13,2
+data/our_datasets/xomo_ground.csv,Original,,20,explore,0.20060618826943782,0.07134454540627544,0.25880199670791626,23,23,5
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,20,exploit,0.16947674418604652,0.07720253805477144,0.567335593700409,23,9,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,20,FOCUS,0.20813953488372094,0.09488685585336441,0.14441560506820678,23,5,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,20,Random,0.21453488372093021,0.07679922268963943,0.4724079966545105,23,4,3
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,20,explore,0.19738372093023254,0.06104581948666321,0.47150386571884156,23,4,2
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,20,Random,0.19186046511627905,0.0903317005088463,0.2597131967544556,23,4,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,20,FOCUS,0.19040697674418605,0.06697096531109462,0.4891941428184509,23,9,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,20,explore,0.1488372093023256,0.07934289353131155,0.18889724016189574,23,5,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,20,exploit,0.1941860465116279,0.09791636700259851,0.2479604959487915,23,13,3
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,20,explore,0.19302325581395346,0.0900993982688861,0.1620154023170471,23,5,3
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,20,exploit,0.16802325581395347,0.09320295143846859,0.27544260025024414,23,21,1
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,20,Random,0.20813953488372094,0.07480820979752015,0.27554959058761597,23,21,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,20,explore,0.1752906976744186,0.08996188950331707,0.7262598395347595,23,9,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,20,Random,0.1941860465116279,0.07581359680326996,0.5625518560409546,23,9,3
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,20,exploit,0.20901162790697675,0.09141921917407177,0.48143610954284666,23,4,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,20,explore,0.17761627906976743,0.060405689714784945,1.1220828533172607,23,13,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,20,FOCUS,0.188953488372093,0.05247072891799299,0.1518558979034424,23,5,3
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,20,exploit,0.15232558139534882,0.07334804087400075,0.3004124402999878,23,9,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,20,explore,0.1930232558139535,0.08159444089697132,0.24830294847488404,23,4,2
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,20,FOCUS,0.19767441860465118,0.08931564823103033,0.28182774782180786,23,21,3
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,20,Random,0.2183139534883721,0.07749097105415682,0.35049734115600584,23,9,2
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,20,explore,0.17877906976744184,0.06077945461946754,0.28800009489059447,23,13,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,20,FOCUS,0.20697674418604647,0.08509848587689296,0.394696307182312,23,9,2
+data/our_datasets/xomo_ground.csv,Original,,20,exploit,0.15910747586916668,0.05966940301772631,0.32209774255752566,23,23,2
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,20,explore,0.24476744186046506,0.09223686499695921,0.25010205507278443,23,21,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,20,FOCUS,0.19302325581395352,0.059790512242709024,1.1162608504295348,23,13,2
+data/our_datasets/xomo_ground.csv,Original,,20,Random,0.22886853421820424,0.07698352666715519,0.3072278618812561,23,23,5
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,20,Random,0.1947674418604651,0.06459770669391891,0.14773039817810057,23,5,2
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,20,explore,0.1662790697674419,0.06909560240346782,0.4589122533798218,23,9,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with Kmeans Discretization,0.4,20,FOCUS,0.18226744186046512,0.0626256174073494,0.7896777510643005,23,8,2
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,20,Random,0.21744186046511632,0.07581359680326995,0.445287299156189,23,21,3
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,20,explore,0.22063953488372096,0.07925924203062248,0.3929907441139221,23,21,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,20,Random,0.2191860465116279,0.0652640557377172,1.1125113487243652,23,13,3
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,20,FOCUS,0.14883720930232558,0.06385828008253945,0.4835912585258484,23,21,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,20,explore,0.19767441860465118,0.09170578675874583,0.2048880934715271,23,12,2
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,20,FOCUS,0.18139534883720929,0.06643189235853814,0.21341340541839598,23,12,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with Kmeans Discretization,0.4,20,Random,0.17761627906976743,0.06388672519413001,0.7414533019065856,23,8,1
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,20,exploit,0.1877906976744186,0.06800337614499269,0.5105727910995483,23,21,2
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,20,FOCUS,0.17441860465116277,0.08870805173377046,0.30011916160583496,23,21,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,20,exploit,0.21598837209302327,0.07737747428179854,0.7415733575820923,23,8,3
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with Kmeans Discretization,0.2,20,exploit,0.1811046511627907,0.07008828840815601,1.7503033876419067,23,4,2
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,20,explore,0.18924418604651166,0.09290463003119435,0.46330344676971436,23,21,3
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,20,Random,0.1802325581395349,0.08051853315006541,0.70852290391922,23,8,2
+data/our_datasets/xomo_ground.csv,Original,,20,FOCUS,0.19633157812556773,0.0759641141248419,0.3280487060546875,23,23,5
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,20,FOCUS,0.22441860465116278,0.09252044341643072,0.2340775966644287,23,4,3
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,20,FOCUS,0.21744186046511632,0.08894398794075878,0.7434793591499329,23,8,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,20,FOCUS,0.21802325581395351,0.054369014375609474,1.0963591575622558,23,5,3
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,20,Random,0.20930232558139536,0.07782883967758843,0.26339905261993407,23,21,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,20,explore,0.19941860465116282,0.06750448175334325,1.0824714660644532,23,5,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with Kmeans Discretization,0.6,20,FOCUS,0.19040697674418605,0.09358253024763771,1.4643280506134033,23,12,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,20,explore,0.17383720930232557,0.06969230450094362,0.7669567942619324,23,8,2
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,20,Random,0.18343023255813953,0.09564748676916135,0.3116936445236206,23,8,3
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with Kmeans Discretization,0.6,20,explore,0.20901162790697675,0.0691952065462473,1.3367788076400757,23,12,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,20,Random,0.19651162790697674,0.06431189213499923,1.074120855331421,23,5,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,20,explore,0.16744186046511628,0.05910820942855272,1.5270066022872926,23,13,1
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,20,exploit,0.1825581395348837,0.08584986958735917,0.24759629964828492,23,21,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,20,exploit,0.16976744186046513,0.0694177281702293,0.7970434546470642,23,12,2
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,20,FOCUS,0.19883720930232557,0.07936845091433266,0.3123469948768616,23,8,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,20,FOCUS,0.21744186046511627,0.07652364364545533,1.5426989555358888,23,13,3
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,20,exploit,0.16511627906976747,0.09836412084910046,0.2458594560623169,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,20,FOCUS,0.20930232558139536,0.05837162975819132,0.8481580018997192,23,12,3
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,20,explore,0.19854651162790699,0.0891314339628912,0.31422593593597414,23,8,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,20,exploit,0.18953488372093025,0.07997937808845416,1.4102436900138855,23,9,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,20,Random,0.18953488372093025,0.08616428144208307,1.411083996295929,23,13,2
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,20,exploit,0.16511627906976747,0.08052692880549203,0.269530200958252,23,4,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,20,exploit,0.19651162790697677,0.08930807878754617,0.21819756031036378,23,5,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,20,Random,0.19534883720930235,0.07727091965505187,1.3020709991455077,23,9,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,20,explore,0.1941860465116279,0.057095273010190316,0.7974771499633789,23,12,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,20,exploit,0.16627906976744186,0.07140519589694903,1.4960773468017579,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,20,Random,0.21715116279069768,0.07531875206876654,0.8613830924034118,23,12,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,20,exploit,0.1979651162790698,0.08375877293960494,1.1734858989715575,23,5,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,20,FOCUS,0.2183139534883721,0.06619933494377701,0.48320999145507815,23,4,3
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,20,exploit,0.186046511627907,0.10216689598366883,0.2488752484321594,23,12,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,20,FOCUS,0.1930232558139535,0.08828024602838282,1.3837627053260804,23,9,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,20,exploit,0.18372093023255814,0.0689486840947609,1.2022475361824037,23,13,2
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,20,Random,0.18372093023255814,0.06015124258780261,0.2614074468612671,23,12,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,30,Random,0.1697674418604651,0.054091643486572125,1.4031124472618104,23,9,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,30,FOCUS,0.1648255813953488,0.08187720742506682,0.3029702425003052,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,30,Random,0.19302325581395346,0.0686342072715056,0.5953624963760376,23,5,2
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,30,FOCUS,0.13255813953488374,0.04598539519368648,0.6325644493103028,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with Kmeans Discretization,0.4,30,explore,0.1616279069767442,0.07297843388145675,1.6839170098304748,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,30,FOCUS,0.15232558139534882,0.05120241594489302,0.8166322350502014,23,9,1
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,30,explore,0.1555232558139535,0.059770015101604915,0.7816244602203369,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,30,FOCUS,0.13953488372093023,0.056007416645545566,0.6622348904609681,23,5,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,30,Random,0.18953488372093025,0.05849888943304775,0.6812524318695068,23,4,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,30,explore,0.14302325581395353,0.06120963808489236,0.5712084650993348,23,5,1
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,30,Random,0.17325581395348835,0.06389003194333094,0.8903478026390076,23,21,2
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,30,exploit,0.1569767441860465,0.07778539628057937,0.3211986541748047,23,4,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,30,Random,0.1869186046511628,0.08115152433965785,0.29590960741043093,23,4,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,30,exploit,0.10232558139534884,0.04054789714921557,1.6187204480171205,23,13,0
+data/our_datasets/xomo_ground.csv,Original,,30,exploit,0.15199059120909983,0.051145264275201024,0.7933310985565185,23,23,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,30,exploit,0.17906976744186048,0.057012328707587275,0.59471036195755,23,5,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,30,exploit,0.13023255813953488,0.0557169700033067,1.2287816643714904,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,30,exploit,0.1302325581395349,0.08136211946295768,0.4517273664474487,23,5,0
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,30,explore,0.16511627906976745,0.06104374301584505,0.9844328999519348,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,30,Random,0.18372093023255814,0.07164149674767145,1.3922496080398559,23,13,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,30,Random,0.1752906976744186,0.05583438942735739,0.7010531544685363,23,9,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,30,explore,0.18343023255813956,0.07612672233121204,1.104419195652008,23,12,3
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,30,exploit,0.13837209302325582,0.06217397388509233,0.32477046251297,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,30,exploit,0.1372093023255814,0.06655389777327528,0.6870224952697754,23,4,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,30,FOCUS,0.16744186046511628,0.09964783853780722,0.39010719060897825,23,12,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,30,Random,0.19767441860465115,0.07624928516630233,0.23078349828720093,23,9,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,30,FOCUS,0.1581395348837209,0.05818602792184561,1.4343272566795349,23,13,1
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,30,explore,0.13691860465116282,0.06048956907160408,0.852585744857788,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,30,Random,0.1767441860465116,0.06953449482663282,1.9571570992469787,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,30,explore,0.12325581395348836,0.05153144140967521,0.6344022631645203,23,5,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,30,exploit,0.20116279069767437,0.10090852837045415,0.35257419347763064,23,5,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,30,explore,0.1901162790697674,0.05802605203683144,0.6659808874130249,23,4,2
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,30,FOCUS,0.13924418604651165,0.06650499540031803,0.36427404880523684,23,9,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,30,FOCUS,0.1941860465116279,0.08954998362553561,0.307746148109436,23,4,3
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,30,FOCUS,0.14970930232558138,0.07181762382926926,0.36329649686813353,23,13,1
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,30,exploit,0.1473837209302326,0.06246348311255729,0.911609947681427,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,30,exploit,0.14883720930232558,0.05947307838392755,0.7252178072929383,23,9,1
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,30,explore,0.1453488372093023,0.056905508387172815,0.8560041546821594,23,21,1
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,30,FOCUS,0.13808139534883718,0.06250676004544728,0.8059147596359253,23,21,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,30,explore,0.1616279069767442,0.08685198115536077,0.34111919403076174,23,12,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,30,explore,0.15813953488372096,0.061792233746913595,1.491373348236084,23,9,1
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,30,FOCUS,0.16279069767441862,0.052519022282028906,0.8279531002044678,23,21,1
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,30,exploit,0.15,0.07480820979752015,0.43493053913116453,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,30,FOCUS,0.1755813953488372,0.05950717014848365,1.8956312894821168,23,13,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,30,FOCUS,0.16744186046511628,0.0581860279218456,0.6090862035751343,23,4,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with Kmeans Discretization,0.6,30,explore,0.15319767441860466,0.06632176817212848,1.8461860060691833,23,12,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,30,exploit,0.1883720930232558,0.0811957686050981,1.104755198955536,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,30,exploit,0.16744186046511628,0.05771941230693422,1.1587390899658203,23,12,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with Kmeans Discretization,0.2,30,exploit,0.1755813953488372,0.06878179730776862,1.6217616558074952,23,4,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,30,exploit,0.13604651162790699,0.05214438912739224,0.35492290258407594,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,30,explore,0.15930232558139532,0.058498889433047756,1.459063458442688,23,13,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,30,explore,0.16395348837209303,0.07516882027392552,0.6207224130630493,23,9,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,30,Random,0.18953488372093025,0.051623192745170035,0.31949219703674314,23,8,3
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,30,explore,0.19186046511627908,0.10080127867534808,0.32219475507736206,23,4,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,30,Random,0.18343023255813953,0.062034502298254184,1.0751819610595703,23,8,3
+data/our_datasets/xomo_ground.csv,Original,,30,Random,0.16833665749127064,0.051186834264829145,0.7263795018196106,23,23,5
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,30,exploit,0.1625,0.05792037180460581,0.39836199283599855,23,12,1
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,30,exploit,0.1686046511627907,0.06694887986271993,0.8473614454269409,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,30,explore,0.12209302325581398,0.06058797893075827,1.9497962474822998,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,30,FOCUS,0.16947674418604652,0.06984673304328487,1.478749394416809,23,9,1
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,30,Random,0.18808139534883722,0.06788335344913561,0.7835468053817749,23,21,2
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,30,Random,0.15465116279069763,0.03979055495876436,0.34655859470367434,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,30,FOCUS,0.1569767441860465,0.07087302305893385,1.064180040359497,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,30,FOCUS,0.17558139534883724,0.04848990572556521,0.635784912109375,23,5,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,30,Random,0.18604651162790697,0.06699935019017643,1.2202666521072387,23,12,3
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,30,exploit,0.15465116279069768,0.06380532520148349,1.245929753780365,23,9,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,30,FOCUS,0.17906976744186046,0.06287677132370127,1.1137163519859314,23,12,3
+data/our_datasets/xomo_ground.csv,Original,,30,FOCUS,0.13947423147465277,0.06689679119178987,0.6816178083419799,23,23,5
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,30,Random,0.1924418604651163,0.05639534883720931,0.5290660500526428,23,21,2
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,30,Random,0.15988372093023256,0.06449296774104595,0.40557935237884524,23,12,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,30,FOCUS,0.17441860465116282,0.06639117406334975,0.49671330451965334,23,5,2
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,30,explore,0.1697674418604651,0.07394471207248672,0.29947609901428224,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,30,Random,0.16627906976744183,0.04177963772842252,0.5397038936614991,23,5,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,30,explore,0.16860465116279072,0.07349536322353713,0.47102760076522826,23,13,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,30,exploit,0.13139534883720932,0.06031959232252528,0.20876624584197997,23,9,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,30,explore,0.12325581395348836,0.05605567810787884,0.8674517512321472,23,9,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,30,Random,0.16976744186046516,0.06902707944025968,0.48862308263778687,23,5,2
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,30,explore,0.18488372093023256,0.08204887145264246,0.5608375072479248,23,5,2
+data/our_datasets/xomo_ground.csv,Original,,30,explore,0.15326265037681977,0.06488039935708795,0.6604282975196838,23,23,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,40,FOCUS,0.17994186046511626,0.059786978754206806,0.788789963722229,23,4,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with Kmeans Discretization,0.2,40,FOCUS,0.15465116279069768,0.0598696077295628,1.7815537452697754,23,4,2
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,40,exploit,0.12325581395348836,0.0535893889386182,0.49709678888320924,23,13,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,40,exploit,0.1511627906976744,0.09200018811559295,0.40783374309539794,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,40,exploit,0.16860465116279072,0.08697643327888717,1.6103834509849548,23,13,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,40,FOCUS,0.13488372093023254,0.06309144170349087,0.5303791046142579,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,40,explore,0.16046511627906976,0.05036373913420399,1.8688169121742249,23,9,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,40,exploit,0.11976744186046513,0.07400868205102124,0.358605694770813,23,9,0
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,40,FOCUS,0.15348837209302327,0.05715444524392794,0.7207463502883911,23,5,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,40,explore,0.10232558139534884,0.04844806199069688,2.435204041004181,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,40,FOCUS,0.16046511627906976,0.05036373913420399,1.3305912613868713,23,8,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,40,Random,0.15232558139534882,0.06303784264385955,0.40269204378128054,23,4,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,40,Random,0.15813953488372096,0.05724899360507521,0.3658664584159851,23,8,1
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,40,Random,0.15232558139534882,0.06346536766974506,1.1927600502967834,23,21,1
+data/our_datasets/xomo_ground.csv,Original,,40,Random,0.16382108108621243,0.06523818662634116,0.8959473371505737,23,23,5
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,40,FOCUS,0.11395348837209304,0.04467295979604314,1.226267397403717,23,21,1
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,40,exploit,0.11511627906976744,0.04561638429286751,0.9972347021102905,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,40,FOCUS,0.1313953488372093,0.05367762273294786,1.062628698348999,23,9,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,40,explore,0.13139534883720932,0.08710070758163956,0.354057252407074,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,40,FOCUS,0.1453488372093023,0.05594703127311353,1.740132200717926,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,40,explore,0.10232558139534884,0.04186046511627907,0.9734159469604492,23,9,0
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,40,Random,0.1511627906976744,0.07186761460633695,1.1310320496559143,23,9,1
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,40,exploit,0.11976744186046515,0.04948354146733305,1.2256784558296203,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,40,Random,0.16279069767441862,0.06368866947734489,0.7902496099472046,23,5,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,40,exploit,0.15813953488372093,0.10126298166082437,0.40020209550857544,23,4,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,40,exploit,0.163953488372093,0.05327307529746655,0.798207139968872,23,5,1
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,40,Random,0.1729651162790698,0.06724799220334603,0.9894721627235412,23,21,2
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,40,FOCUS,0.11511627906976744,0.052248004508513884,0.37762534618377686,23,9,1
+data/our_datasets/xomo_ground.csv,Original,,40,explore,0.1324125481315483,0.04981739808746753,0.7878288984298706,23,23,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,40,Random,0.17093023255813952,0.05214438912739224,1.4580262541770934,23,12,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,40,exploit,0.13953488372093023,0.06937876227988975,0.6846861481666565,23,5,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,40,exploit,0.15930232558139537,0.04112730042750557,0.7801758408546448,23,4,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,40,Random,0.1613372093023256,0.05813590104922982,0.5055484533309936,23,12,2
+data/our_datasets/xomo_ground.csv,Original,,40,FOCUS,0.14658989842250622,0.06456242699831992,0.8161545395851135,23,23,5
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,40,FOCUS,0.20348837209302326,0.08250899290514789,0.6570228934288025,23,5,3
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,40,FOCUS,0.14069767441860465,0.05671510882910325,0.9914454460144043,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,40,FOCUS,0.12209302325581395,0.044048132383432116,0.7589390516281128,23,5,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,40,Random,0.17906976744186046,0.05153144140967521,0.8737289428710937,23,5,2
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,40,Random,0.17209302325581394,0.0630056613216003,1.1672069549560546,23,21,2
+data/our_datasets/xomo_ground.csv,Original,,40,exploit,0.12797359921359364,0.065808195907255,0.8965105414390564,23,23,1
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,40,explore,0.12209302325581399,0.05347573157007869,0.9874562621116638,23,21,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,40,Random,0.16831395348837208,0.055991571789078876,0.4891321539878845,23,13,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with EFB Discretization,0.2,40,explore,0.12209302325581395,0.06058797893075826,0.76110919713974,23,5,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,40,explore,0.12441860465116279,0.06380532520148349,0.4641959547996521,23,12,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,40,Random,0.1372093023255814,0.047031973060829506,0.8028600573539734,23,4,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (4) with Kmeans Discretization,0.2,40,explore,0.14156976744186048,0.054888001163409486,0.7068410992622376,23,5,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,40,FOCUS,0.12325581395348839,0.056536026889038214,2.2340670466423034,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,40,explore,0.13837209302325582,0.04848990572556522,1.3166632056236267,23,12,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,40,Random,0.17790697674418604,0.06031959232252529,0.34104669094085693,23,9,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with Kmeans Discretization,0.6,40,explore,0.14767441860465116,0.06711025130468873,2.211927342414856,23,12,1
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,40,exploit,0.11366279069767445,0.05474000077854642,1.209161400794983,23,21,0
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,40,exploit,0.11162790697674418,0.04509469634805888,2.079947853088379,23,13,1
+data/our_datasets/xomo_ground.csv,FAMD (12),0.6,40,FOCUS,0.10813953488372094,0.05849888943304775,1.1440314531326294,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with Kmeans Discretization,0.6,40,Random,0.1453488372093023,0.05447770593080223,2.1575780630111696,23,13,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,40,FOCUS,0.14534883720930233,0.07312650085362848,0.3659008026123047,23,4,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,40,exploit,0.12209302325581399,0.0677518936370103,0.7125855445861816,23,5,0
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (8),0.4,40,FOCUS,0.12906976744186047,0.05575335858017141,0.3489580512046814,23,8,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,40,Random,0.16627906976744183,0.06295198922622867,0.6695227503776551,23,5,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with EFB Discretization,0.2,40,explore,0.16860465116279066,0.05784810680852441,0.7996564030647277,23,4,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,40,exploit,0.16715116279069764,0.05337687443749458,1.8091781497001649,23,9,1
+data/our_datasets/xomo_ground.csv,FAMD (8),0.4,40,explore,0.11860465116279066,0.06573625127954684,1.0675029516220094,23,21,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,40,FOCUS,0.14999999999999997,0.04959271653985145,1.3801024913787843,23,12,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with Kmeans Discretization,0.4,40,explore,0.16395348837209303,0.06346536766974507,2.0870376110076903,23,8,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,40,Random,0.14069767441860465,0.05477472424797152,1.4754456520080566,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (12) with EFB Discretization,0.6,40,exploit,0.1441860465116279,0.07376163501001724,1.4816882371902467,23,12,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,40,FOCUS,0.13139534883720932,0.04367823249068128,2.0399381518363953,23,9,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (4),0.2,40,explore,0.15465116279069765,0.06031959232252529,0.7453237533569336,23,5,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with EFB Discretization,0.4,40,exploit,0.09999999999999999,0.042944617006091604,0.8561099529266357,23,9,0
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,40,exploit,0.11511627906976743,0.039243109373688856,0.5311270594596863,23,12,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (12),0.6,40,FOCUS,0.11627906976744184,0.040946085724788396,0.48452810049057005,23,12,1
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (8) with Kmeans Discretization,0.4,40,Random,0.15232558139534885,0.05120241594489302,1.8393992066383362,23,9,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (4) with Kmeans Discretization,0.2,40,Random,0.18139534883720926,0.046278485446819534,1.9383535981178284,23,4,2
+data/our_datasets/xomo_ground.csv,Symbolic Feature Elimation (12) with EFB Discretization,0.6,40,explore,0.12093023255813953,0.0502024026626114,1.8279203414916991,23,13,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (8),0.4,40,explore,0.1616279069767442,0.06838751605829123,0.771703040599823,23,9,2
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,40,exploit,0.16395348837209306,0.037118348138400856,1.4501871943473816,23,8,1
+data/our_datasets/xomo_ground.csv,Numeric Feature Elimination (12),0.6,40,explore,0.12558139534883722,0.056200213830672426,0.7567625045776367,23,13,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,40,explore,0.14767441860465114,0.043054671119938645,1.345817542076111,23,8,1
+data/our_datasets/xomo_ground.csv,Symbolic Dimensionality Reduction (8) with EFB Discretization,0.4,40,Random,0.15348837209302327,0.06875230464695109,1.4374495983123778,23,8,1
+data/our_datasets/xomo_ground.csv,FAMD (4),0.2,40,explore,0.13488372093023257,0.05020240266261141,0.9619260549545288,23,21,1
+data/our_datasets/xomo_ground.csv,Numeric Dimensionality Reduction (4),0.2,40,explore,0.15436046511627904,0.07859542656069395,0.3783608555793762,23,4,1
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,20,FOCUS,0.47971014492753616,0.06231884057971014,0.34704134464263914,124,10,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,20,explore,0.4916666666666667,0.05452988828758192,0.26796795129776,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,20,Random,0.5010869565217391,0.04208361017957814,0.8502833366394043,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,20,FOCUS,0.4862318840579711,0.05537199247755744,0.9150461077690124,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,20,FOCUS,0.5097826086956522,0.04932196219364533,0.3046833038330078,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,20,exploit,0.49601449275362325,0.053273191909866735,0.7817659497261047,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,20,Random,0.5014492753623189,0.05745239026931824,0.6478219866752625,124,8,5
+data/our_datasets/Scrum10k.csv,Original,,20,FOCUS,0.45615942028985507,0.09258575729163812,0.7839209556579589,124,124,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,20,exploit,0.48405797101449266,0.0788357841678791,0.9216536045074463,124,8,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,20,Random,0.4967391304347826,0.025973485098583732,0.6183401584625244,124,4,5
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,20,explore,0.5050724637681159,0.08369800486059002,0.42331829071044924,124,18,6
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,20,exploit,0.491304347826087,0.044763609308639124,0.5045880079269409,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,20,FOCUS,0.5181159420289856,0.06446832300663285,0.7671077013015747,124,7,5
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,20,FOCUS,0.47934782608695664,0.06050941591181209,0.4652320981025696,124,18,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,20,FOCUS,0.5021739130434784,0.0633426186275368,0.9022775530815125,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,20,explore,0.49782608695652175,0.06067515537805593,0.7180930495262146,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,20,Random,0.49347826086956526,0.06114070048010971,0.7243950009346009,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,20,FOCUS,0.5036231884057971,0.07226421799388985,0.592127001285553,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,20,exploit,0.4797101449275362,0.04134881918170175,0.6649526119232178,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,20,exploit,0.4884057971014493,0.05628900430706797,0.6847527861595154,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,20,Random,0.4666666666666667,0.04975259099644021,0.8438873410224914,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,20,explore,0.497463768115942,0.08227988846740608,0.9941120505332947,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,20,FOCUS,0.4728260869565217,0.05537080707369577,0.8238734483718873,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,20,explore,0.4971014492753623,0.07852879527040038,0.6624807357788086,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,20,exploit,0.4699275362318841,0.06744485171993835,0.9597516059875488,124,10,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,20,exploit,0.4666666666666667,0.08507629055906767,0.3614755511283875,124,11,5
+data/our_datasets/Scrum10k.csv,Original,,20,explore,0.45398550724637676,0.06205179554866123,0.7582258105278015,124,124,5
+data/our_datasets/Scrum10k.csv,Original,,20,Random,0.5018115942028984,0.06640919879444458,0.7806381344795227,124,124,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,20,FOCUS,0.46775362318840585,0.076361650449131,0.29235014915466306,124,18,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,20,explore,0.47862318840579715,0.05487545808483974,0.32877240180969236,124,18,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,20,FOCUS,0.4981884057971014,0.052946920510208974,1.0815070509910583,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,20,FOCUS,0.4782608695652174,0.06262982735168668,0.871621060371399,124,8,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,20,explore,0.5228260869565218,0.08538049436185832,0.3319736123085022,124,10,5
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,20,Random,0.49347826086956526,0.0658942333554159,0.4283493995666504,124,18,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,20,explore,0.5108695652173914,0.05563688648725968,0.9452794075012207,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,20,explore,0.5141304347826086,0.058443500255522016,0.1269711971282959,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,20,FOCUS,0.49347826086956514,0.059882437510519054,0.7404553532600403,124,3,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,20,exploit,0.452536231884058,0.08599941261895022,0.3028882384300232,124,18,4
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,20,explore,0.4387681159420289,0.06409972244198296,0.9260351538658143,124,11,2
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,20,exploit,0.5090579710144928,0.07195017266967448,0.8519423007965088,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,20,Random,0.4909420289855072,0.05654379911388573,0.7890823483467102,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,20,Random,0.5086956521739131,0.03395760728655067,1.0515604376792909,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,20,exploit,0.4894927536231884,0.06876330521802639,0.8942776441574096,124,10,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,20,exploit,0.4992753623188405,0.06625186011504926,0.3444474935531616,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,20,explore,0.5376811594202899,0.058673282550716424,0.8580706000328064,124,10,6
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,20,explore,0.4971014492753623,0.0745848976155424,0.6091049432754516,124,3,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,20,Random,0.5039855072463768,0.041845865441239964,0.29990185499191285,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,20,Random,0.49384057971014494,0.05734604239204154,0.42168459892272947,124,4,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,20,Random,0.5206521739130435,0.06883199793953876,0.3336878061294556,124,18,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,20,exploit,0.5083333333333334,0.04808204454649862,0.3353324055671692,124,7,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,20,FOCUS,0.4880434782608695,0.07545545387742872,0.32884544134140015,124,18,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,20,explore,0.511231884057971,0.07001196375094024,0.6143541455268859,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,20,Random,0.4862318840579711,0.072965653272248,0.348911452293396,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,20,exploit,0.5105072463768117,0.0830801130715752,0.12877905368804932,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,20,FOCUS,0.5054347826086957,0.03757475221183393,0.643510353565216,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,20,FOCUS,0.5094202898550724,0.08771109801487978,0.5478611469268799,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,20,explore,0.5197463768115942,0.09087975666908844,0.7081730484962463,124,7,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,20,explore,0.47862318840579715,0.07233593797487743,0.2915942072868347,124,18,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,20,Random,0.4967391304347826,0.0962016224026864,0.9067165374755859,124,8,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,20,Random,0.4869565217391304,0.028675882517984606,0.33807615041732786,124,18,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,20,FOCUS,0.4750000000000001,0.08421010096662938,0.3882553458213806,124,11,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,20,explore,0.508695652173913,0.06202322877255263,0.43565390110015867,124,8,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,20,exploit,0.5028985507246376,0.07101449275362322,0.32907135486602784,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,20,exploit,0.513768115942029,0.059486530769537825,0.7126083493232727,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,20,Random,0.5065217391304347,0.05503908217900941,0.9623661041259766,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,20,FOCUS,0.5014492753623189,0.054497378773806275,0.15437670946121215,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,20,FOCUS,0.47608695652173916,0.04757841006138977,0.956194806098938,124,11,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,20,Random,0.475,0.04922605162706196,0.29461255073547366,124,10,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,20,explore,0.513768115942029,0.053637874996223356,0.3812506437301636,124,11,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,20,exploit,0.5018115942028986,0.046786853515017976,0.4833750009536743,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,20,Random,0.5054347826086956,0.037574752211833914,0.9247587442398071,124,7,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,20,exploit,0.44673913043478264,0.06913647316623227,0.33875460624694825,124,18,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,20,explore,0.5,0.03296902366978934,0.7385106086730957,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,20,exploit,0.48985507246376825,0.07359265599917719,0.8834988474845886,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,20,exploit,0.5126811594202898,0.05626451130236624,0.8015219926834106,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,20,Random,0.4891304347826087,0.06012746385191013,0.3576434373855591,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,20,FOCUS,0.46630434782608693,0.04786312794848695,0.6340867519378662,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,20,Random,0.4989130434782608,0.04208361017957812,0.7400108098983764,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,20,explore,0.48442028985507246,0.07344534465535438,0.3350586533546448,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,20,explore,0.5141304347826087,0.04469757651076541,0.5277404904365539,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,20,FOCUS,0.5217391304347826,0.06071408714682149,0.7032020926475525,124,3,5
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,20,exploit,0.44565217391304357,0.06811208746417304,0.42580699920654297,124,18,3
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,20,Random,0.5119565217391304,0.043735651171153724,0.4875462532043457,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,20,explore,0.4818840579710145,0.06519725937261199,0.8682386398315429,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,20,exploit,0.45108695652173914,0.08378500782497955,1.0979102492332458,124,11,4
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,20,FOCUS,0.4818840579710145,0.060692461469502565,0.3038325309753418,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,20,Random,0.4742753623188406,0.06887775502712133,0.12706871032714845,124,4,5
+data/our_datasets/Scrum10k.csv,Original,,20,exploit,0.4416666666666666,0.08135570854432662,0.8408115029335022,124,124,2
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,30,explore,0.5054347826086957,0.07040089093352729,0.8418901443481446,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,30,exploit,0.46340579710144925,0.08879325287392972,1.0088273525238036,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,30,Random,0.4880434782608695,0.04736686645543679,0.8578766465187073,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,30,explore,0.502536231884058,0.07380195545132529,0.8452784061431885,124,3,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,30,Random,0.49492753623188407,0.039096872348452764,0.48438785076141355,124,18,5
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,30,FOCUS,0.4612318840579711,0.07163566686410996,0.6454076051712037,124,18,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,30,Random,0.4695652173913044,0.048317632110636666,1.0872614622116088,124,10,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,30,FOCUS,0.4536231884057972,0.06910323652975153,0.5404656529426575,124,18,5
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,30,exploit,0.4307971014492754,0.07298634037350694,0.49672800302505493,124,18,2
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,30,exploit,0.46630434782608693,0.06355675611323355,0.7409104466438293,124,8,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,30,exploit,0.45688405797101445,0.07708029975808377,0.577187716960907,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,30,explore,0.48405797101449277,0.0773226096904015,1.0812368988990784,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,30,exploit,0.4452898550724639,0.06446730486335925,0.24984890222549438,124,4,3
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,30,FOCUS,0.4391304347826087,0.07251447501241667,1.3227438092231751,124,11,2
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,30,exploit,0.47318840579710153,0.07033466373940686,0.6131064057350158,124,8,5
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,30,explore,0.4141304347826087,0.07004195789963767,0.5274893403053283,124,18,1
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,30,Random,0.48478260869565215,0.04865875931652042,0.40476490259170533,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,30,FOCUS,0.45724637681159425,0.06633107087996676,0.8383532047271729,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,30,Random,0.46739130434782605,0.05973318114797429,0.9631463408470153,124,3,4
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,30,explore,0.4695652173913044,0.06596193361000159,0.9322708129882813,124,7,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,30,explore,0.44565217391304357,0.0659977468061665,0.5603278994560241,124,18,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,30,Random,0.49782608695652175,0.029084974261434023,0.7298865914344788,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,30,explore,0.45652173913043476,0.06617652206858476,0.35484540462493896,124,4,5
+data/our_datasets/Scrum10k.csv,Original,,30,Random,0.4981884057971014,0.07180406225582033,1.4274223566055297,124,124,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,30,exploit,0.47644927536231885,0.05899792448440673,0.781354546546936,124,4,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,30,exploit,0.4398550724637681,0.08221045630717534,0.6143657445907593,124,18,1
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,30,explore,0.4724637681159421,0.09267433205071403,0.6571222424507142,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,30,exploit,0.4873188405797101,0.0687403923897276,1.163667905330658,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,30,exploit,0.48586956521739133,0.052026512799018786,0.6661240935325623,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,30,FOCUS,0.49528985507246376,0.07365951831013531,0.9414407014846802,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,30,FOCUS,0.4815217391304348,0.039655296406423256,0.595663595199585,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,30,Random,0.49311594202898557,0.0551617792149453,0.9905650019645691,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,30,exploit,0.47826086956521746,0.04008497590127342,0.46781144142150877,124,10,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,30,Random,0.45905797101449275,0.07007943253269236,0.5568120360374451,124,18,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,30,FOCUS,0.48949275362318845,0.07462272961261346,0.7537514567375183,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,30,explore,0.4659420289855073,0.07506560877437767,0.40882890224456786,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,30,explore,0.43695652173913035,0.070966413774813,0.8646764039993287,124,8,4
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,30,FOCUS,0.46811594202898543,0.07053222817329753,1.0699312567710877,124,7,5
+data/our_datasets/Scrum10k.csv,Original,,30,explore,0.4336956521739131,0.06821897080223133,1.3523436069488526,124,124,1
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,30,FOCUS,0.4971014492753623,0.08408295480788575,0.3566707491874695,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,30,explore,0.4605072463768116,0.06422248368140193,0.7852972030639649,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,30,exploit,0.49855072463768113,0.06588227903003309,0.3860365152359009,124,3,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,30,explore,0.5096014492753624,0.09043666240846374,0.3876159906387329,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,30,exploit,0.48695652173913045,0.1021353612128626,1.145798659324646,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,30,Random,0.46811594202898565,0.06421941751044788,0.7800376057624817,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,30,Random,0.4710144927536232,0.06633502893533802,0.657765555381775,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,30,Random,0.47572463768115947,0.05360727339227863,1.2502776980400085,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,30,exploit,0.4771739130434782,0.07785303692289751,1.1873909950256347,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,30,Random,0.4699275362318841,0.06602857038207229,1.160510492324829,124,11,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,30,exploit,0.4228260869565218,0.07741338636278448,0.45587769746780393,124,18,2
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,30,explore,0.4659420289855073,0.060022575043127004,1.171208655834198,124,10,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,30,FOCUS,0.42028985507246375,0.06557870925651456,0.5529363512992859,124,18,1
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,30,explore,0.43659420289855067,0.06565373354515644,0.5364012837409973,124,18,2
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,30,explore,0.45688405797101445,0.06702310980905923,1.075262999534607,124,11,3
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,30,explore,0.44239130434782614,0.08132343029570174,1.3866159439086914,124,11,2
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,30,Random,0.4731884057971015,0.05820153442595661,0.8499464511871337,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,30,FOCUS,0.4797101449275362,0.08748630882774824,0.37230935096740725,124,7,5
+data/our_datasets/Scrum10k.csv,Original,,30,FOCUS,0.46014492753623193,0.060040069236166255,1.394436252117157,124,124,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,30,Random,0.47391304347826085,0.04101730926981133,0.25215580463409426,124,4,5
+data/our_datasets/Scrum10k.csv,Original,,30,exploit,0.43442028985507253,0.061593137245683424,1.4280995965003966,124,124,3
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,30,FOCUS,0.48804347826086963,0.03977429231202606,0.7810477972030639,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,30,Random,0.4666666666666667,0.04579572553427525,0.43014935255050657,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,30,explore,0.48949275362318845,0.09264245489323589,0.3485844492912292,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,30,explore,0.4739130434782609,0.0767363591074904,1.0306310057640076,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,30,explore,0.4702898550724638,0.07439103753160292,0.9060574650764466,124,7,3
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,30,explore,0.5010869565217392,0.031857284542940977,0.7510942935943603,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,30,Random,0.4797101449275362,0.05549986706917857,0.3955088496208191,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,30,exploit,0.4315217391304348,0.07580953565536654,1.0857283115386962,124,11,3
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,30,FOCUS,0.49637681159420294,0.06471221412859332,0.32365964651107787,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,30,FOCUS,0.45833333333333337,0.07227784118526241,0.9188429474830627,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,30,exploit,0.4884057971014493,0.0514645823320716,0.8278733611106872,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,30,exploit,0.46775362318840585,0.060082689991635366,0.7214327096939087,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,30,exploit,0.4927536231884059,0.07861567452240881,0.39285736083984374,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,30,FOCUS,0.4579710144927537,0.06504001644149818,0.8405094981193543,124,3,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,30,Random,0.45688405797101445,0.05794723244066131,0.5816330075263977,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,30,exploit,0.46521739130434786,0.05685520361140008,0.865923547744751,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,30,Random,0.47536231884057967,0.05100337494135586,0.7685045957565307,124,4,5
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,30,Random,0.48586956521739133,0.06003897599844123,0.5906126976013184,124,18,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,30,Random,0.48079710144927545,0.051712685565064066,1.1157021880149842,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,30,exploit,0.44601449275362326,0.05740095622249945,1.3632455945014954,124,11,3
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,30,FOCUS,0.469927536231884,0.07662936409297579,0.760412061214447,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,30,FOCUS,0.4557971014492754,0.058552338907292056,1.0918171525001525,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,30,FOCUS,0.4322463768115942,0.06154196420766989,1.1858142495155335,124,11,2
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,30,explore,0.49601449275362325,0.09269911781686148,0.7029685020446778,124,8,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,30,FOCUS,0.4804347826086956,0.08656615275482978,0.4550156474113464,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,30,FOCUS,0.46231884057971023,0.058269160849201806,1.098363196849823,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,30,Random,0.45688405797101456,0.06807256559066478,1.2773497462272645,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,30,FOCUS,0.4804347826086957,0.07583117808552277,1.1254289031028748,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,40,explore,0.5039855072463769,0.0622714261824681,0.9074789047241211,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,40,Random,0.48478260869565215,0.038948854059062864,1.5898615002632142,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,40,explore,0.458695652173913,0.0752751725790469,1.4560927152633667,124,10,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,40,exploit,0.475,0.04469757651076541,0.49787470102310183,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,40,explore,0.4623188405797102,0.08443195167321454,0.8101572036743164,124,11,4
+data/our_datasets/Scrum10k.csv,Original,,40,FOCUS,0.44927536231884063,0.07246376811594202,1.9801445960998536,124,124,5
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,40,FOCUS,0.41594202898550725,0.06421941751044791,0.905049467086792,124,18,1
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,40,explore,0.5105072463768117,0.06772455394381946,1.1629048466682435,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,40,explore,0.47391304347826085,0.037401414204533155,0.8774109959602356,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,40,exploit,0.46485507246376817,0.06598879532928838,0.742058253288269,124,11,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,40,Random,0.45760869565217394,0.053460141858077986,0.9173113942146301,124,3,3
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,40,explore,0.40760869565217395,0.06014383620452178,0.8440783023834229,124,18,1
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,40,exploit,0.441304347826087,0.0726772218506557,1.0713347434997558,124,7,3
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,40,Random,0.47536231884057967,0.061887621660278766,0.8537498116493225,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,40,exploit,0.4735507246376812,0.07482651643259007,0.8533485531806946,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,40,Random,0.4605072463768116,0.059246609021354965,1.448199200630188,124,11,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,40,explore,0.4836956521739131,0.06896917813074974,0.45154833793640137,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,40,FOCUS,0.4047101449275362,0.05707068066785658,1.4190798163414002,124,11,1
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,40,Random,0.44818840579710145,0.06055279028812974,0.7794277191162109,124,11,3
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,40,exploit,0.48369565217391297,0.07231415714845592,0.9638101935386658,124,3,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,40,exploit,0.3884057971014493,0.06214164224498069,0.7581995010375977,124,18,0
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,40,explore,0.45833333333333337,0.06858744458817134,1.3427554845809937,124,10,5
+data/our_datasets/Scrum10k.csv,Original,,40,exploit,0.4170289855072464,0.0691820288737807,2.0621152997016905,124,124,1
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,40,FOCUS,0.452536231884058,0.06438580123727733,0.5275560975074768,124,10,5
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,40,exploit,0.4144927536231884,0.05947328848893677,0.7262425541877746,124,18,1
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,40,explore,0.4246376811594203,0.06849263709227299,1.0333739042282104,124,8,2
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,40,exploit,0.48586956521739133,0.06159313724568343,0.47489410638809204,124,4,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,40,FOCUS,0.4192028985507246,0.06693687364644524,0.819085955619812,124,18,1
+data/our_datasets/Scrum10k.csv,Original,,40,explore,0.41014492753623183,0.06438274284417732,1.9512871026992797,124,124,1
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,40,explore,0.39166666666666666,0.05808299872252389,0.8621191620826721,124,18,0
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,40,exploit,0.4253623188405797,0.08291007824989871,1.655707585811615,124,11,1
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,40,FOCUS,0.4427536231884058,0.07151186370011252,1.3526839852333068,124,10,4
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,40,Random,0.4521739130434782,0.06917918252094274,0.8966637849807739,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,40,exploit,0.4449275362318841,0.09106824776447976,1.2724985599517822,124,8,1
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,40,exploit,0.41594202898550725,0.0882274275665184,1.3971699953079224,124,11,0
+data/our_datasets/Scrum10k.csv,FAMD (3),0.2,40,Random,0.4601449275362318,0.06004006923616625,0.7681700944900512,124,18,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,40,Random,0.486231884057971,0.05092610095888145,0.7356646418571472,124,18,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,40,FOCUS,0.4641304347826087,0.05292708184321674,0.9665448904037476,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,40,Random,0.45869565217391306,0.06067515537805593,1.452648651599884,124,10,4
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,40,FOCUS,0.4880434782608695,0.03400975618948263,0.4041163086891174,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with Kmeans Discretization,0.6,40,explore,0.42065217391304344,0.08973446206446874,1.5040390014648437,124,11,1
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,40,FOCUS,0.4644927536231885,0.07804250265157968,0.46970505714416505,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,40,Random,0.48478260869565215,0.040143881114389976,0.856989049911499,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with EFB Discretization,0.6,40,exploit,0.4612318840579711,0.062094092541097774,1.4145867824554443,124,10,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,40,exploit,0.45942028985507244,0.060297519022361495,0.420002806186676,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,40,explore,0.45724637681159425,0.07147514009901562,0.5261881947517395,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,40,Random,0.4706521739130435,0.05964410834051717,1.3589044570922852,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,40,FOCUS,0.4778985507246377,0.06483280323687501,1.163637351989746,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,40,FOCUS,0.5134057971014493,0.05651593244048731,1.247409200668335,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,40,Random,0.47608695652173916,0.054086327411411866,0.498581063747406,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,40,exploit,0.4695652173913043,0.06315582194058239,1.0341739535331727,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,40,FOCUS,0.45036231884057976,0.051560147936972625,1.1272044897079467,124,8,3
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,40,exploit,0.4579710144927536,0.0753623188405797,0.9883042931556701,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with Kmeans Discretization,0.2,40,Random,0.45905797101449275,0.06871747192148431,0.43070573806762696,124,4,5
+data/our_datasets/Scrum10k.csv,FAMD (7),0.4,40,explore,0.44601449275362326,0.0653571369133903,0.7397216558456421,124,18,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,40,exploit,0.47391304347826085,0.08946854686406175,1.1301468014717102,124,7,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,40,explore,0.4797101449275362,0.055924004004564445,0.8708760499954223,124,4,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,40,exploit,0.4717391304347826,0.08156279159583034,0.9823884010314942,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,40,explore,0.447463768115942,0.0640751419703891,1.2960597395896911,124,8,4
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,40,FOCUS,0.4210144927536231,0.0671962269272131,1.602415347099304,124,11,1
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,40,explore,0.5018115942028987,0.07565005688636535,0.8872302412986756,124,8,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (7),0.4,40,Random,0.4590579710144927,0.055814744058127794,0.46720840930938723,124,7,4
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,40,explore,0.4721014492753624,0.06145658112162601,0.9508266568183898,124,3,5
+data/our_datasets/Scrum10k.csv,Original,,40,Random,0.4746376811594203,0.06381338972546881,2.0124778509140016,124,124,5
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (3),0.2,40,FOCUS,0.4532608695652174,0.06483280323687503,0.814677095413208,124,4,4
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,40,exploit,0.45615942028985507,0.06471119982261703,1.4338375926017761,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,40,explore,0.44275362318840583,0.08052612648599769,1.1891014099121093,124,7,4
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (10),0.6,40,FOCUS,0.45507246376811594,0.06807738655975677,0.7691775560379028,124,11,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,40,Random,0.45905797101449275,0.055814744058127794,0.43008495569229127,124,3,4
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (3) with EFB Discretization,0.2,40,exploit,0.47536231884057967,0.05192169309470393,0.887057650089264,124,4,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,40,explore,0.46630434782608693,0.04932196219364534,0.6098522424697876,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,40,FOCUS,0.4702898550724638,0.07502362576842346,1.0468397855758667,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with EFB Discretization,0.4,40,Random,0.4804347826086957,0.034303769213172824,1.0936390519142152,124,7,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with Kmeans Discretization,0.4,40,Random,0.475,0.05511416232211834,1.0091334462165833,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (7) with EFB Discretization,0.4,40,FOCUS,0.4253623188405797,0.07066982313931089,1.3850388526916504,124,8,2
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,40,Random,0.4713768115942029,0.06184836733417431,1.4919286012649535,124,10,5
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,40,explore,0.49347826086956514,0.04667589250779107,0.3870076537132263,124,3,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,40,Random,0.469927536231884,0.0538028228935318,0.8336493968963623,124,18,4
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (10),0.6,40,exploit,0.44855072463768114,0.07332459706225138,0.5222067594528198,124,10,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,40,FOCUS,0.3960144927536232,0.05789283677886718,0.8281997084617615,124,18,1
+data/our_datasets/Scrum10k.csv,Numeric Feature Elimination (7),0.4,40,FOCUS,0.4666666666666666,0.05297294748549873,0.974009895324707,124,8,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with EFB Discretization,0.2,40,FOCUS,0.4829710144927536,0.0580287303270823,1.0113564610481263,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Feature Elimation (10) with EFB Discretization,0.6,40,explore,0.41231884057971013,0.06589423335541589,1.6559581637382508,124,11,1
+data/our_datasets/Scrum10k.csv,Numeric Dimensionality Reduction (3),0.2,40,FOCUS,0.45471014492753625,0.06804942018475706,0.3923466444015503,124,3,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (3) with Kmeans Discretization,0.2,40,Random,0.46739130434782616,0.05853440007754896,0.9896548628807068,124,3,5
+data/our_datasets/Scrum10k.csv,FAMD (10),0.6,40,exploit,0.4130434782608696,0.07055455909935121,0.8776049613952637,124,18,1
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (10) with Kmeans Discretization,0.6,40,FOCUS,0.44565217391304346,0.06880243031419206,1.4298285961151123,124,10,5
+data/our_datasets/Scrum10k.csv,Symbolic Dimensionality Reduction (7) with Kmeans Discretization,0.4,40,Random,0.4728260869565218,0.06066541853206881,1.1298941493034362,124,7,5

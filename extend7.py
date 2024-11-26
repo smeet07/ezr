@@ -83,55 +83,53 @@ original = Pipeline("Original", [])
 
 def get_pipelines(d):
     pipelines = []
-    # n_components_list = [int(ratio * len(d.cols.x) / 10) for ratio in range(2, 9, 2)]
-    # if all([n_components > 10 for n_components in n_components_list]):
-    #     n_components_list.append(5)
     
     smaller_data = DullColumnRemover().transform(d)
     logger.info(f"Reduced data to {len(smaller_data.cols.x)} from {len(d.cols.x)} columns")
-    n_components_list = [i for i in [5, 10, 20] if i < len(smaller_data.cols.x)]
+    n_components_list = [(ratio, int(ratio * len(smaller_data.cols.x))) for ratio in [.2,.4,.6]]
+    n_components_list = [n_components for n_components in n_components_list if n_components[1] >= 2]
 
-    for n_components in n_components_list:
+    for ratio, n_components in n_components_list:
         sym_dim_red_kmeans = Pipeline(f"Symbolic Dimensionality Reduction ({n_components}) with Kmeans Discretization", [
             DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.KMeans, 5),
             MCAProcessor(n_components)
-        ], n_components)
+        ], ratio)
     
         sym_dim_red_efb = Pipeline(f"Symbolic Dimensionality Reduction ({n_components}) with EFB Discretization", [
             DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.EqualFrequencyBins, 5),
             MCAProcessor(n_components)
-        ], n_components)
+        ], ratio)
 
         num_dim_red = Pipeline(f"Numeric Dimensionality Reduction ({n_components})", [
             DullColumnRemover(),
             OneHotPreprocessor(),
             PCAProcessor(n_components=n_components)
-        ], n_components)
+        ], ratio)
 
         sym_feature_elim_kmeans = Pipeline(f"Symbolic Feature Elimation ({n_components}) with Kmeans Discretization", [
             DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.KMeans, 5),
             FeatureEliminationProcessor(EntropyRelevance(0), MutualInformationSimilarity(0.7), n_components)
-        ], n_components)
+        ], ratio)
         
         sym_feature_elim_efb = Pipeline(f"Symbolic Feature Elimation ({n_components}) with EFB Discretization", [
             DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.EqualFrequencyBins, 5),
             FeatureEliminationProcessor(EntropyRelevance(0), MutualInformationSimilarity(0.7), n_components)
-        ], n_components)
+        ], ratio)
 
         num_feature_elim = Pipeline(f"Numeric Feature Elimination ({n_components})", [
             DullColumnRemover(),
             OneHotPreprocessor(),
             FeatureEliminationProcessor(VarianceRelevance(0), CosineSimilarity(0.95), n_components)
-        ], n_components)
+        ], ratio)
 
         famd = Pipeline(f"FAMD ({n_components})", [
             DullColumnRemover(),
             FAMDProcessor(n_components)
-        ], n_components)
+        ], ratio)
 
         pipelines.extend([sym_dim_red_kmeans, sym_dim_red_efb, num_dim_red, sym_feature_elim_kmeans, sym_feature_elim_efb, num_feature_elim, famd])
 
