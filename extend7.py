@@ -14,7 +14,6 @@ import stats
 import logging
 from collections import namedtuple
 import warnings
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from copy import deepcopy
 
 def warn(*args, **kwargs):
@@ -99,43 +98,43 @@ def get_pipelines(d):
     n_components_list = [n_components for n_components in n_components_list if n_components[1] >= 2]
 
     for ratio, n_components in n_components_list:
-        sym_dim_red_kmeans = Pipeline(f"Symbolic Dimensionality Reduction ({n_components}) with Kmeans Discretization", [
+        sym_dim_red_kmeans = Pipeline(f"Symbolic Dimensionality Reduction with Kmeans Discretization", [
             DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.KMeans, 5),
             MCAProcessor(n_components)
         ], ratio)
     
-        sym_dim_red_efb = Pipeline(f"Symbolic Dimensionality Reduction ({n_components}) with EFB Discretization", [
+        sym_dim_red_efb = Pipeline(f"Symbolic Dimensionality Reduction with EFB Discretization", [
             DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.EqualFrequencyBins, 5),
             MCAProcessor(n_components)
         ], ratio)
 
-        num_dim_red = Pipeline(f"Numeric Dimensionality Reduction ({n_components})", [
+        num_dim_red = Pipeline(f"Numeric Dimensionality Reduction", [
             DullColumnRemover(),
             OneHotPreprocessor(),
             PCAProcessor(n_components=n_components)
         ], ratio)
 
-        sym_feature_elim_kmeans = Pipeline(f"Symbolic Feature Elimation ({n_components}) with Kmeans Discretization", [
+        sym_feature_elim_kmeans = Pipeline(f"Symbolic Feature Elimation with Kmeans Discretization", [
             DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.KMeans, 5),
             FeatureEliminationProcessor(EntropyRelevance(0), MutualInformationSimilarity(0.7), n_components)
         ], ratio)
         
-        sym_feature_elim_efb = Pipeline(f"Symbolic Feature Elimation ({n_components}) with EFB Discretization", [
+        sym_feature_elim_efb = Pipeline(f"Symbolic Feature Elimation with EFB Discretization", [
             DullColumnRemover(),
             DiscretizationProcessor(DiscretizeTypes.EqualFrequencyBins, 5),
             FeatureEliminationProcessor(EntropyRelevance(0), MutualInformationSimilarity(0.7), n_components)
         ], ratio)
 
-        num_feature_elim = Pipeline(f"Numeric Feature Elimination ({n_components})", [
+        num_feature_elim = Pipeline(f"Numeric Feature Elimination", [
             DullColumnRemover(),
             OneHotPreprocessor(),
             FeatureEliminationProcessor(VarianceRelevance(0), CosineSimilarity(0.95), n_components)
         ], ratio)
 
-        famd = Pipeline(f"FAMD ({n_components})", [
+        famd = Pipeline(f"FAMD", [
             DullColumnRemover(),
             FAMDProcessor(n_components)
         ], ratio)
@@ -184,18 +183,13 @@ def main():
         for last in [20, 30, 40]: # we cannot run it parallel because it is global variable
             the.Last = last
             
-            with ThreadPoolExecutor() as executor:
-                futures = []
-                
-                for pipeline in get_pipelines(data):
-                    
-                    for policy in scoring_policies:
-                        experiment = Experiment(data, pipeline, data_path, policy, last)
-                        futures.append(executor.submit(run_experiment, experiment))
-            
-            for future in as_completed(futures):
-                if future.result() is not None:
-                    results.append(future.result())
+            # Remove ThreadPoolExecutor and use a simple loop
+            for pipeline in get_pipelines(data):
+                for policy in scoring_policies:
+                    experiment = Experiment(data, pipeline, data_path, policy, last)
+                    result = run_experiment(experiment)
+                    if result is not None:
+                        results.append(result)
                     
         df = pd.concat([df, pd.DataFrame([result._asdict() for result in results])], ignore_index=True)
         somes = [stats.SOME(result.all_results, f"{result.method},{result.last},{result.policy}") for result in results]
