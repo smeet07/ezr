@@ -15,7 +15,11 @@ class OneHotPreprocessor:
             return data
         
         cat_data = np.array([[r[col.at] for col in sym_cols] for r in data.rows])
-        encoded = self.encoder.fit_transform(cat_data)
+        # if there are only 1 and 0, do not use OneHotEncoder
+        if np.all(np.logical_or(cat_data == 0, cat_data == 1)):
+            encoded = cat_data
+        else:
+            encoded = self.encoder.fit_transform(cat_data)
         
         index = 0
         new_cols = []

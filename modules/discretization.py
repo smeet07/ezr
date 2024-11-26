@@ -13,49 +13,35 @@ class DiscretizationProcessor:
     self.type = type
     self.bins = bins
 
-  def transform(self, dataset:DATA):
+  def transform(self, dataset:DATA):    
     new_data = deepcopy(dataset)
     sym_cols = [(i, col) for i, col in enumerate(new_data.cols.x) if isinstance(col,SYM)]
     num_cols = [(i, col) for i, col in enumerate(new_data.cols.x) if isinstance(col,NUM)]
-
+    
     if len(num_cols) == 0:
-        return new_data
-
-    # Count unique values in each numeric column
-    unique_counts = [len(set(r[col.at] for r in new_data.rows)) for _, col in num_cols]
+      return new_data
     
-    # Adjust number of bins for each column
-    adjusted_bins = [min(self.bins, count) for count in unique_counts]
-
-    # Use QuantileTransformer instead of KBinsDiscretizer for more flexibility
-    from sklearn.preprocessing import QuantileTransformer
-
+    # discretize numeric columns
+    discretizer = KBinsDiscretizer(n_bins=self.bins, encode='ordinal', strategy=self.type.value)
     x = np.array([[r[col.at] for _, col in num_cols] for r in new_data.rows])
+    x = discretizer.fit_transform(x)
     
-    discretized_data = []
-    for i, n_bins in enumerate(adjusted_bins):
-        qt = QuantileTransformer(n_quantiles=n_bins, output_distribution='uniform')
-        column_data = qt.fit_transform(x[:, i].reshape(-1, 1))
-        discretized_data.append(np.floor(column_data * n_bins).astype(int))
-
-    x = np.column_stack(discretized_data)
-
-    # Rest of the method remains the same
+    # modify the DATA object based on new valies
     new_num_cols = []
     for i, (index, col) in enumerate(num_cols):
-        new_col = SYM(at=col.at, txt=col.txt.lower())
-        new_num_cols.append((index, new_col))
-        for j, r in enumerate(new_data.rows):
-            val = int(x[j][i])
-            r[col.at] = val
-            new_col.add(val)
+      new_col = SYM(at=col.at, txt=col.txt.lower()) # create a new SYM column
+      new_num_cols.append((index, new_col))
+      for j, r in enumerate(new_data.rows):
+        val = int(x[j][i])
+        r[col.at] = val # update the value in the row
+        new_col.add(val) # update stats in the column
 
     new_cols = [col for _, col in sorted(sym_cols + new_num_cols, key=lambda x: x[0])]
-
+    # update the column list all in the DATA object
     for col_old, col_new in zip(new_data.cols.x, new_cols):
-        index = new_data.cols.all.index(col_old)
-        new_data.cols.all[index] = col_new
-
+      index = new_data.cols.all.index(col_old)
+      new_data.cols.all[index] = col_new
+    # update the column list x in the DATA object
     new_data.cols.x = new_cols
     return new_data
   

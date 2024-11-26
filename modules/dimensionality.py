@@ -15,8 +15,8 @@ class PCAProcessor:
         num_cols = [col for col in data.cols.x if isinstance(col, NUM)]
         sym_cols = [col for col in data.cols.x if isinstance(col, SYM)]
         y_cols = data.cols.y
-        assert len(sym_cols) != 0, "All columns must be numeric for PCA"
-        assert len(num_cols) == 0, "No numeric columns to apply PCA"
+        assert len(sym_cols) == 0, "All columns must be numeric for PCA"
+        assert len(num_cols) != 0, "No numeric columns to apply PCA"
             
         # Prepare the data matrix X
         X = np.array([[r[col.at] for col in num_cols] for r in data.rows])
@@ -32,7 +32,7 @@ class PCAProcessor:
             row_data += y_data
             new_cols_values.append(row_data)
         
-        new_data = new_cols + new_cols_values
+        new_data = [new_cols] + new_cols_values
         new_data = DATA().adds(new_data)
         # Confirm that the x columns are all NUM
         assert all([isinstance(col, NUM) for col in new_data.cols.x])
@@ -48,10 +48,9 @@ class MCAProcessor:
         sym_cols = [col for col in data.cols.x if isinstance(col, SYM)]
         num_cols = [col for col in data.cols.x if isinstance(col, NUM)]
         y_cols = data.cols.y
-        
-        
-        assert len(sym_cols) == 0, "No categorical columns to apply MCA"
-        assert len(num_cols) != 0, "All columns must be categorical (SYM) for MCA"
+                
+        assert len(sym_cols) != 0, "No categorical columns to apply MCA"
+        assert len(num_cols) == 0, "All columns must be categorical (SYM) for MCA"
             
         # Prepare the data matrix X
         X = [[r[col.at] for col in sym_cols] for r in data.rows]
@@ -59,17 +58,17 @@ class MCAProcessor:
         
         # Apply MCA
         X_mca = self.mca.fit_transform(X_df)
-        
         # Create new columns for the MCA components
         new_cols = [f"MCA{i}" for i in range(X_mca.shape[1])] + [col.txt for col in y_cols]
         new_cols_values = []
-        for i,row in enumerate(X_mca):
+        for i,row in enumerate(X_mca.values):
             row_data = [float(val) for val in row]
             y_data = [data.rows[i][col.at] for col in data.cols.y]
             row_data += y_data
             new_cols_values.append(row_data)
+            
         
-        new_data = new_cols + new_cols_values
+        new_data = [new_cols] + new_cols_values
         new_data = DATA().adds(new_data)
         
         # Confirm that the x columns are all NUM
