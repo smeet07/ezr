@@ -157,7 +157,7 @@ def run_experiment(ex: Experiment):
         return Result(
             dataset=ex.file,
             method=ex.pipeline.name,
-            n_components=ex.pipeline.n_components,
+            n_components=str(ex.pipeline.n_components),
             last=ex.last,
             policy=ex.policy.name,
             mean=np.mean(results),
@@ -182,7 +182,7 @@ def main():
         data = DATA().adds(csv(data_path))
         results = []
         
-        for last in [20, 30, 40]: # we cannot run it parallel because it is global variable
+        for last in [20]:#, 30, 40]: # we cannot run it parallel because it is global variable
             the.Last = last
             
             # Remove ThreadPoolExecutor and use a simple loop
@@ -194,12 +194,12 @@ def main():
                         results.append(result)
                     
         df = pd.concat([df, pd.DataFrame([result._asdict() for result in results])], ignore_index=True)
-        somes = [stats.SOME(result.all_results, f"{result.method},{result.last},{result.policy}") for result in results]
+        somes = [stats.SOME(result.all_results, f"{result.method},{result.last},{result.policy},{result.n_components}") for result in results]
         ranks = stats.report(somes, 0.01)
         
         for rank in ranks:
-            method, last_str, policy_str = rank.txt.split(",")
-            filterr = (df["method"] == method) & (df["last"] == int(last_str)) & (df["policy"] == policy_str) & (df["dataset"] == data_path) & (df["n_components"] == int(rank.n_components))
+            method, last_str, policy_str, n_components = rank.txt.split(",")
+            filterr = (df["method"] == method) & (df["last"] == int(last_str)) & (df["policy"] == policy_str) & (df["dataset"] == data_path) & (df["n_components"] == n_components)
             df.loc[filterr, "rank"] = int(rank.rank)
             
         df.drop(columns=["all_results"], inplace=False).to_csv("results.csv", index=False)
