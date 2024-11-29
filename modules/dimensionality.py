@@ -82,6 +82,7 @@ import pandas as pd
 
 class FAMDProcessor:
     def __init__(self, n_components=None):
+        self.n_components = n_components
         self.famd = FAMD(n_components=n_components)
         
     def transform(self, data: DATA) -> DATA:
@@ -92,9 +93,11 @@ class FAMDProcessor:
         y_cols = data.cols.y
         
         if len(num_cols) == 0:
-            return data
+            return MCAProcessor(n_components=self.n_components).transform(data)
         if len(sym_cols) == 0:
-            return data
+            return PCAProcessor(n_components=self.n_components).transform(data)
+        
+        print("FAMD is computed")
         
         # Prepare the data matrix X
         X = []

@@ -69,7 +69,7 @@ class Pipeline:
         return d
 
 class DullColumnRemover:
-    def __init__(self, threshold=0.1):
+    def __init__(self, threshold=0.001):
         self.threshold = threshold
 
     def transform(self, d):
@@ -95,7 +95,7 @@ def get_pipelines(d):
     
     smaller_data = DullColumnRemover().transform(d)
     logger.info(f"Reduced data to {len(smaller_data.cols.x)} from {len(d.cols.x)} columns")
-    n_components_list = [(ratio, int(ratio * len(smaller_data.cols.x))) for ratio in [.2,.4,.6]]
+    n_components_list = [(ratio, int(ratio * len(smaller_data.cols.x))) for ratio in [.2, .4, .6]]
     n_components_list = [n_components for n_components in n_components_list if n_components[1] >= 2]
 
     for ratio, n_components in n_components_list:
@@ -150,9 +150,10 @@ def run_experiment(ex: Experiment):
     try:
         start = time.time()
         reduced_data = ex.pipeline.transform(ex.data)
+        print(f"Original: {len(ex.data.cols.x)} columns, Reduced: {len(reduced_data.cols.x)} columns")
         results = [reduced_data.chebyshev(reduced_data.shuffle().activeLearning(score=ex.policy.function)[0]) for _ in range(NR_RUNS)]
         duration = (time.time() - start) / NR_RUNS
-        logger.info(f"{ex.pipeline.name} (Last={ex.last}, Policy={ex.policy.name}): {duration:.2f} secs")
+        logger.info(f"{ex.pipeline.name} (Last={ex.last}, Policy={ex.policy.name}, n_components={ex.pipeline.n_components}) took {duration} seconds")
         return Result(
             dataset=ex.file,
             method=ex.pipeline.name,
@@ -198,7 +199,7 @@ def main():
         
         for rank in ranks:
             method, last_str, policy_str = rank.txt.split(",")
-            filterr = (df["method"] == method) & (df["last"] == int(last_str)) & (df["policy"] == policy_str)
+            filterr = (df["method"] == method) & (df["last"] == int(last_str)) & (df["policy"] == policy_str) & (df["dataset"] == data_path) & (df["n_components"] == int(rank.n_components))
             df.loc[filterr, "rank"] = int(rank.rank)
             
         df.drop(columns=["all_results"], inplace=False).to_csv("results.csv", index=False)
