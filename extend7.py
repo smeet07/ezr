@@ -19,7 +19,6 @@ from copy import deepcopy
 
 def warn(*args, **kwargs):
     pass
-import warnings
 warnings.warn = warn
 
 # Configure logging
@@ -69,7 +68,7 @@ class Pipeline:
         return d
 
 class DullColumnRemover:
-    def __init__(self, threshold=0.001):
+    def __init__(self, threshold=0.01):
         self.threshold = threshold
 
     def transform(self, d):
@@ -150,10 +149,8 @@ def run_experiment(ex: Experiment):
     try:
         start = time.time()
         reduced_data = ex.pipeline.transform(ex.data)
-        print(f"Original: {len(ex.data.cols.x)} columns, Reduced: {len(reduced_data.cols.x)} columns")
         results = [reduced_data.chebyshev(reduced_data.shuffle().activeLearning(score=ex.policy.function)[0]) for _ in range(NR_RUNS)]
         duration = (time.time() - start) / NR_RUNS
-        logger.info(f"{ex.pipeline.name} (Last={ex.last}, Policy={ex.policy.name}, n_components={ex.pipeline.n_components}) took {duration} seconds")
         return Result(
             dataset=ex.file,
             method=ex.pipeline.name,
@@ -182,7 +179,7 @@ def main():
         data = DATA().adds(csv(data_path))
         results = []
         
-        for last in [20]:#, 30, 40]: # we cannot run it parallel because it is global variable
+        for last in [20, 30, 40]: # we cannot run it parallel because it is global variable
             the.Last = last
             
             # Remove ThreadPoolExecutor and use a simple loop
@@ -202,7 +199,10 @@ def main():
             filterr = (df["method"] == method) & (df["last"] == int(last_str)) & (df["policy"] == policy_str) & (df["dataset"] == data_path) & (df["n_components"] == n_components)
             df.loc[filterr, "rank"] = int(rank.rank)
             
-        df.drop(columns=["all_results"], inplace=False).to_csv("results.csv", index=False)
+        if os.path.exists("results.csv"):
+            df.drop(columns=["all_results"], inplace=False).to_csv("results.csv", mode='a', header=False, index=False)
+        else:
+            df.drop(columns=["all_results"], inplace=False).to_csv("results.csv", index=False)
         logger.info(f"Results for {data_path} saved to results.csv")
 
 if __name__ == "__main__":
